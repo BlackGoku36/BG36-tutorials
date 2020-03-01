@@ -1,0 +1,47 @@
+.centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.badge-warning{
+	color: rgb(255, 255, 255);
+	background-color: rgb(255, 158, 31);
+}
+
+.purple-grey{
+	background-color: #2F323A;
+}
+
+.pill-text{
+	color: white;
+}
+
+.muted{
+	color: rgb(209, 209, 209);
+}
+
+.link{
+	color: rgb(100, 194, 152);
+}
+
+.link:hover{
+	color: rgb(89, 177, 137);
+	text-decoration: underline;
+}
+
+h1{
+	text-transform: uppercase;
+	margin-left: 100px;
+}
+
+hr{
+	margin-left: 4%;
+	margin-right: 4%;
+	background-color: #59507A;
+}
+
+p{
+	text-align: center;
+}

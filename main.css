@@ -1,0 +1,66 @@
+.card:hover {
+	box-shadow: 1px 1px 20px rgb(24, 27, 31);
+}
+
+.card{
+	color: white;
+	background-color: #2B2E3A;
+	border-width: 2px;
+	border-color: #59507A;
+}
+
+.card-footer{
+	border-top-color: #59507A;
+	background-color: rgb(40, 43, 54);
+}
+
+.centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.badge-warning{
+	color: rgb(255, 255, 255);
+	background-color: rgb(255, 158, 31);
+}
+
+.nav-link.active.a{
+	color: white;
+	background-color: #59507A;
+}
+
+.nav-link.active.a:hover{
+	color: rgb(233, 233, 233);
+	background-color: rgb(82, 73, 112);
+}
+
+.nav-link:hover{
+	color: rgb(221, 221, 221);
+}
+
+.nav-link{
+	color: white;
+}
+
+.purple-grey{
+	background-color: #2F323A;
+}
+
+.pill-text{
+	color: white;
+}
+
+.muted{
+	color: rgb(209, 209, 209);
+}
+
+.link{
+	color: rgb(100, 194, 152);
+}
+
+.link:hover{
+	color: rgb(89, 177, 137);
+	text-decoration: underline;
+}
