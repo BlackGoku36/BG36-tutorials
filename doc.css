@@ -56,3 +56,10 @@ hr{
 	border-radius: 3px;
 	border-color: #59507A;
 }
+
+.page-item.disabled a.page-link{
+	color: white;
+	background-color: rgba(0,0,0,0);
+	border-radius: 1px;
+	border-color: rgb(73, 66, 100);
+}
