@@ -1,3 +1,8 @@
+@font-face {
+	font-family: "Segoe UI";
+	src: url(segoeui.ttf) format("truetype");
+}
+
 .badge-warning{
 	color: rgb(255, 255, 255);
 	background-color: rgb(255, 158, 31);
@@ -62,4 +67,89 @@ hr{
 	background-color: rgba(0,0,0,0);
 	border-radius: 1px;
 	border-color: rgb(73, 66, 100);
+}
+
+.c-button{
+	color: white;
+	background-color: rgba(0,0,0,0);
+	border-radius: 3px;
+	border-color: #59507A;
+}
+
+.c-button:hover{
+	color: rgb(221, 221, 221);
+	background-color: rgb(82, 73, 112);
+	border-color: rgb(73, 66, 100);
+}
+
+.sidebar {
+	height: 100%; /* 100% Full-height */
+	width: 0; /* 0 width - change this with JavaScript */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Stay on top */
+	top: 0;
+	left: 0;
+	background-color: #2F323A;
+	border-right: 2px solid rgb(73, 66, 100);
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 60px; /* Place content 60px from the top */
+	transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+.sidebar-h{
+	color: white;
+	padding: 20px;
+}
+
+/* The sidebar links */
+.sidebar a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: white;
+	display: block;
+	transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+	color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+.sidebar a:hover{
+	text-decoration: underline;
+}
+
+.sidebar li a{
+	text-transform: uppercase;
+	font-size: 19px;
+	padding-left: 10px;
+	border-bottom: 1px solid #59507A;
+}
+
+.sidebar li ul li a{
+	font-size: 15px;
+	padding-left: 30px;
+	border: 0px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+	transition: margin-left .5s;
+	padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+	.sidebar {padding-top: 15px;}
+	.sidebar a {font-size: 18px;}
 }
