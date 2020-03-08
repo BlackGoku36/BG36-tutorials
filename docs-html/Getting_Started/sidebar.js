@@ -18,12 +18,6 @@ document.write(`
     <a href="../Basics/canvas.html">Canvas</a>
     <a href="../Basics/navmesh.html">Navmesh</a>
     <a href="../Basics/tilesheet.html">Tilesheet</a>
-    <button class="dropdown-btn">Mechanism
-        <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-container">
-        <a href="#">Save/Load Game</a>
-    </div>
 </div>
 <button class="dropdown-btn">Mechanism
     <i class="fa fa-caret-down"></i>
