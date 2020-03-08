@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="../../doc.css">
+	<link rel="stylesheet" href="../../atom-one-dark.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<title>BG36-Tutorials | TUT-1</title>
+</head>
+
+<body class="purple-grey">
+
+	<div id="sidebar" class="sidebar">
+		<h3 class="sidebar-h"><a href="../../index.html">BG36-Tutorials</a></h3>
+		<p class="sidebar-sub">Armory</p>
+		<hr>
+		<button class="dropdown-btn">Get Started
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="active dropdown-container">
+			<a href="introduction.html">Introduction</a>
+			<a href="setup.html">Setup</a>
+			<a href="pitfalls_misconception.html">Pitfalls and misconceptions</a>
+		</div>
+		<button class="dropdown-btn">Basics
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-container">
+			<a href="../Basics/trait.html">Trait</a>
+			<a href="../Basics/canvas.html">Canvas</a>
+			<a href="../Basics/navmesh.html">Navmesh</a>
+			<a href="../Basics/tilesheet.html">Tilesheet</a>
+			<button class="dropdown-btn">Mechanism
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-container">
+				<a href="#">Save/Load Game</a>
+			</div>
+		</div>
+		<button class="dropdown-btn">Mechanism
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-container">
+			<a href="#">Save/Load Game</a>
+		</div>
+	</div>
+	<!-- Page Content Holder -->
+	<div id="main">
+
+		<button class="btn c-button" onclick="operateNav()">&#9776;</button>
+
+		<div class="text-white mt-4 mb-5">
+			<h1>Pitfalls and Misconceptions</h1>
+			<div class="para text-break">
+                <hr>
+                <h3 id="misconceptions">Misconceptions</h3>
+                <p><details>
+                    <summary>I choosed <code>EEVEE</code>/<code>Cycles</code> renderer but still get this error</summary></p>
+                <p style="margin-left: 35px">It doesn't matter which renderer you select, Armory has it own renderer, and `EEVEE`/`Cycles`/`Workbench` aren't used by Armory at all.</p>
+                <p></details></p>
+                <hr />
+                <h3 id="commonpitfalls">Common Pitfalls</h3>
+                <p><details>
+                    <summary> I am using Blender 2.7…</summary></p>
+                <p style="margin-left: 35px">Let me stop you right there, Armory now uses Blender 2.8 and support for Blender 2.7X is dropped, If you want to use Blender 2.7x, you will have to use Armory version < 0.6, you can find it [here](https://github.com/armory3d/armory/releases). So, move on like I did.</p>
+                <p></details></p>
+                <hr />
+                <p><details>
+                    <summary>I made changes to my game. Why don’t they show up when I start the game?</summary></p>
+                <p style="margin-left: 35px">Armory caches builds of the game. Sometimes you need to clean this cache, click `Clean` button next to `Play` button under `Render Tab` in `Armory Player`, or if you don't want to clean build everytime, you can entirely disable it by `Render Tab - Armory Project - Flags` and unselect `Cache Build`.</p>
+                <p></details></p>
+                <hr />
+                <p><details>
+                    <summary>My mesh look all weird, how do I fix this?</summary></p>
+                <p style="margin-left: 35px">That issue is because of triangulation bug, try clean building.</p>
+                <p></details></p>
+                <hr />
+                <p><details>
+                    <summary>Error says that it can't find some file</summary></p>
+                <p style="margin-left: 35px">Make sure your blend file isn't directly exposed to any drive and also check if your folder's name doesn't have any illegal characters.</p>
+                <p></details></p>
+                <hr />
+			</div>
+		</div>
+
+		<nav aria-label="Page navigation example">
+			<ul class="pagination justify-content-center">
+				<li class="page-item"><a class="page-link" href="index.html"><img src="home.svg" /></a></li>
+				<li class="page-item disabled">
+					<a class="page-link disabled" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+				</li>
+				<li class="page-item"><a class="page-link active " href="#">1</a></li>
+				<li class="page-item"><a class="page-link a" href="#">2</a></li>
+				<li class="page-item"><a class="page-link a" href="#">3</a></li>
+				<li class="page-item">
+					<a class="page-link a" href="#">Next</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="mt-5">
+			<div class="row justify-content-center border-top border-dark pt-3 mr-1">
+				<div class="col-6 text-center mt-3 mb-3 border-right border-dark"><a href="#" class="link">FAQ</a></div>
+				<div class="col-6 text-center mt-3 mb-3"><a href="#" class="link">Newsletter</a></div>
+			</div>
+			<div class="row justify-content-center mr-1">
+				<div class="col-6 text-center mt-3 mb-3 border-right border-dark"><a href="#" class="link">Github</a>
+				</div>
+				<div class="col-6 text-center mt-3 mb-3"><a href="#" class="link">Contact</a></div>
+			</div>
+			<div class="row justify-content-center muted mr-1">
+				<div class="col-6 text-center mt-3 mb-3">@Copyright</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+	<script src="../../highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script src="../../script.js"></script>
+</body>
+
+</html>

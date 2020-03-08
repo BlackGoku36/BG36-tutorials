@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="../../doc.css">
+	<link rel="stylesheet" href="../../atom-one-dark.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<title>BG36-Tutorials | TUT-1</title>
+</head>
+
+<body class="purple-grey">
+
+	<div id="sidebar" class="sidebar">
+		<h3 class="sidebar-h"><a href="../../index.html">BG36-Tutorials</a></h3>
+		<p class="sidebar-sub">Armory</p>
+		<hr>
+		<button class="dropdown-btn">Get Started
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="active dropdown-container">
+			<a href="introduction.html">Introduction</a>
+			<a href="setup.html">Setup</a>
+			<a href="pitfalls_misconception.html">Pitfalls and misconceptions</a>
+		</div>
+		<button class="dropdown-btn">Basics
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-container">
+			<a href="../Basics/trait.html">Trait</a>
+			<a href="../Basics/canvas.html">Canvas</a>
+			<a href="../Basics/navmesh.html">Navmesh</a>
+			<a href="../Basics/tilesheet.html">Tilesheet</a>
+			<button class="dropdown-btn">Mechanism
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-container">
+				<a href="#">Save/Load Game</a>
+			</div>
+		</div>
+		<button class="dropdown-btn">Mechanism
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-container">
+			<a href="#">Save/Load Game</a>
+		</div>
+	</div>
+	<!-- Page Content Holder -->
+	<div id="main">
+
+		<button class="btn c-button" onclick="operateNav()">&#9776;</button>
+
+		<div class="text-white mt-4 mb-5">
+			<h2>Introduction to Armory3D game engine</h2>
+			<div class="para text-break">
+				<hr>
+				<p>Armory3D is <a href="https://en.wikipedia.org/wiki/Data-driven_programming">data-driven</a> 3D engine written in <a href="https://en.wikipedia.org/wiki/Haxe"><code>Haxe</code></a>, <a href="https://en.wikipedia.org/wiki/C_(programming_language)"><code>C</code></a> and <a href="https://en.wikipedia.org/wiki/WebAssembly"><code>WebAssembly</code></a>, comes with Blender embedding but is designed to be able to be integrated into almost any 3d modelling and animation tool like <a href="https://en.wikipedia.org/wiki/Blender_(software)">Blender</a>. It's main focus is on performance, portability and minimal footprint.</p>
+				<h4 id="rendering">Rendering</h4>
+				<p>Armory has it own renderer (see Iron). Armory uses Cycles/EEVEE material nodes to build <a href="https://en.wikipedia.org/wiki/Shader">shaders</a>. The <a href="https://en.wikipedia.org/wiki/Graphics_pipeline">renderpath</a> is completely scriptable, with support of forward and deferred renderpath out-of-box. It is completely possible to write your own shaders(in <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language">glsl</a>).</p>
+				<h4 id="scripting">Scripting</h4>
+				<p>Scripting is done with <code>traits</code>(a concept developed in <code>Iron</code>: <em>a piece of logic attached to an object</em>).</p>
+				<p>There are 4 different <code>Traits</code>:</p>
+				<ol>
+				<li><strong>LOGIC NODES TRAIT</strong>: Traits can be written with <code>Logic Node</code>(similar to UE4's Blueprints)</li>
+				<li><strong>HAXE TRAIT</strong>: Traits can be written in <code>Haxe</code>.</li>
+				<li><strong>CANVAS TRAIT</strong>: Trait for <code>Canvas UI</code></li>
+				<li><strong>WEBASSEMBLY(WASM) TRAIT</strong>: Trait written in WebAssembly, <code>Rust</code>/<code>C</code>/<code>C++</code> can be used to write logic in after compiling it to WASM.</li>
+				</ol>
+				<h4 id="targets">Targets</h4>
+				<p>Armory support all targets that Kha support. Platform such as <code>Desktop(MacOS, Linux, Windows)</code>, <code>HTML5</code>, <code>Mobile(Android, iOS)</code> and <code>consoles(PS4, Xbox One, Switch)</code> is supported out-of-box.</p>
+				<hr />
+				<h3 id="technologies">Technologies</h3>
+				<br>
+				<h4 id="haxe">Haxe</h4>
+				<p><a href="https://haxe.org/"><strong>Haxe</strong></a> is open source cross-platform toolkit based on modern, high-level, strictly typed, multi-paradigm programming language and cross-compiler that can compile code to target platform native source code or binary. Haxe is easy-to-learn if you know java/AS3 and other OOP languages.</p>
+				<p>(So basically, Haxe will cross-compile you code to many different language such as Python, C++, Java, Lua, etc., and then you run/compile this cross-compiled code. It is useful if you want to create cross-platform app/games. So, many birds with one stone.)</p>
+				<h4 id="kha">Kha</h4>
+				<p><a href="http://kha.tech/"><strong>Kha</strong></a> is ultra-portable, high performance, open-source multimedia framework. It is low level SDK for building cross-platform games and media applications. With the help of Haxe Programming language and the <a href="https://github.com/Kode/krafix">Krafix shader-compiler</a> it can cross-compile your code and optimize your assets. Kha gives you a common API to graphics, audio, input, and networking, for platforms such as Web, Mobile, Desktop, Consoles, <a href="https://github.com/Kode/Kha/wiki/Features#supported-platforms">etc</a> and Graphics APIs such as Metal, Vulkan, DirectX, WebGL and OpenGL.</p>
+				<p>(So basically, Kha is SDL on steroid which you can use to create Engines/Games/Apps, it will use platform native Graphics API, in order to maximum utilise GPU, resulting in fast, light-weight product)</p>
+				<h4 id="iron">Iron</h4>
+				<p><a href="https://github.com/armory3d/iron"><strong>Iron</strong></a> is data-based, asynchronous engine used for building 3D tools, It is built with Kha, Haxe and WebAssembly. It is core engine of Armory but is designed to run stand-alone. Iron handles render &amp; content pipelines and lets you develop a custom visual engine on top of it.</p>
+				<p>(So basically, Iron is an engine, you can use it with other libs such as <a href="https://pybullet.org/wordpress/">Bullet</a> for your need.)</p>
+			</div>
+		</div>
+
+		<nav aria-label="Page navigation example">
+			<ul class="pagination justify-content-center">
+				<li class="page-item"><a class="page-link" href="index.html"><img src="home.svg" /></a></li>
+				<li class="page-item disabled">
+					<a class="page-link disabled" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+				</li>
+				<li class="page-item"><a class="page-link active " href="#">1</a></li>
+				<li class="page-item"><a class="page-link a" href="#">2</a></li>
+				<li class="page-item"><a class="page-link a" href="#">3</a></li>
+				<li class="page-item">
+					<a class="page-link a" href="#">Next</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="mt-5">
+			<div class="row justify-content-center border-top border-dark pt-3 mr-1">
+				<div class="col-6 text-center mt-3 mb-3 border-right border-dark"><a href="#" class="link">FAQ</a></div>
+				<div class="col-6 text-center mt-3 mb-3"><a href="#" class="link">Newsletter</a></div>
+			</div>
+			<div class="row justify-content-center mr-1">
+				<div class="col-6 text-center mt-3 mb-3 border-right border-dark"><a href="#" class="link">Github</a>
+				</div>
+				<div class="col-6 text-center mt-3 mb-3"><a href="#" class="link">Contact</a></div>
+			</div>
+			<div class="row justify-content-center muted mr-1">
+				<div class="col-6 text-center mt-3 mb-3">@Copyright</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+	<script src="../../highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script src="../../script.js"></script>
+</body>
+
+</html>

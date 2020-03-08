@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="../../doc.css">
+	<link rel="stylesheet" href="../../atom-one-dark.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<title>BG36-Tutorials | TUT-1</title>
+</head>
+
+<body class="purple-grey">
+
+	<div id="sidebar" class="sidebar">
+		<h3 class="sidebar-h"><a href="../../index.html">BG36-Tutorials</a></h3>
+		<p class="sidebar-sub">Armory</p>
+		<hr>
+		<button class="dropdown-btn">Get Started
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-container">
+			<a href="../Getting_Started/introduction.html">Introduction</a>
+			<a href="../Getting_Started/setup.html">Setup</a>
+			<a href="../Getting_Started/pitfalls_misconception.html">Pitfalls and misconceptions</a>
+		</div>
+		<button class="dropdown-btn">Basics
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="active dropdown-container">
+			<a href="trait.html">Trait</a>
+			<a href="canvas.html">Canvas</a>
+			<a href="navmesh.html">Navmesh</a>
+			<a href="tilesheet.html">Tilesheet</a>
+			<button class="dropdown-btn">Mechanism
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-container">
+				<a href="#">Save/Load Game</a>
+			</div>
+		</div>
+		<button class="dropdown-btn">Mechanism
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-container">
+			<a href="#">Save/Load Game</a>
+		</div>
+	</div>
+	<!-- Page Content Holder -->
+	<div id="main">
+
+		<button class="btn c-button" onclick="operateNav()">&#9776;</button>
+
+		<div class="text-white mt-4 mb-5">
+			<h2 id="traits">Traits</h2>
+			<div class="para text-break">
+				<hr>
+				<p>In this tutorial, we will learn about what is Traits, what are different types, how to create them
+					and rotate different cube from different traits.</p>
+				<p>Goal:</p>
+				<iframe width="640" height="480"
+					src="https://blackgoku36.github.io/armory-tutorials/docassets/trait_final.mp4" frameborder="0"
+					allowfullscreen></iframe>
+				<hr />
+				<p><code>Trait</code> is conecpt in <code>Iron</code> means a piece of logic attached to object or
+					scene.</p>
+				<p>There are 4 different types of <code>traits</code>:</p>
+				<ol>
+					<li>
+						<p><strong>Haxe Trait</strong>: <a href="https://haxe.org/">Haxe</a> Text-based scripting trait
+							that can be used to write game-play logic in.</p>
+					</li>
+					<li>
+						<p><strong>Logic Nodes Trait</strong>: Visual scripting trait for writing game-play logic in. It
+							is similar to <a
+								href="https://docs.unrealengine.com/en-US/Engine/Blueprints/index.html">UE4's
+								Blueprints</a>.</p>
+					</li>
+					<li>
+						<p><strong>Canvas Trait</strong>: Trait for UI, canvas can be made using <a
+								href="https://github.com/armory3d/armory2d">Armory2D</a>, but since it use
+							<code>Json</code>, you can create layout yourself without <code>Armory2D</code>.</p>
+					</li>
+					<li>
+						<p><strong>WebAssembly(WASM)</strong>: <a href="https://webassembly.org/">WebAssembly</a> can
+							also be used as scripting trait, It can be written in <a
+								href="https://www.rust-lang.org/"><code>Rust</code></a>/<a
+								href="https://en.wikipedia.org/wiki/C_%28programming_language%29"><code>C</code></a>/<a
+								href="https://en.wikipedia.org/wiki/C%2B%2B"><code>C++</code></a> and than complied to
+							<code>WASM</code> to use it in Armory <em>(WASM will only work with Krom target)</em>.
+							WASM is very useful when it comes to plugins, you can use Libraries made in
+							<code>Rust</code>/<code>C</code>/<code>C++</code> and compile it to WASM and then use it in
+							<code>Armory</code> and <code>Kha</code>. Two examples that are used in
+							<code>ArmorPaint</code>: <a
+								href="https://twitter.com/luboslenco/status/1173942414966439938">Texture-synthesis(Rust)</a>,
+							<a href="https://twitter.com/luboslenco/status/1172536139573538816">Chips(C)</a>.</p>
+					</li>
+				</ol>
+				<hr />
+				<p>Let's get started, fire up armory3D project.
+					We will create Trait in following order:</p>
+				<ol>
+					<li><a href="#haxe">Haxe</a></li>
+					<li><a href="#logic-node">Logic Node</a></li>
+					<li><a href="#wasm">Wasm</a></li>
+					<li><a href="#canvas">Canvas</a></li>
+				</ol>
+				<h3 id="haxe">Haxe</h3>
+				<p>Create a cube, name it <code>Haxe</code> and place it wherever you want. Select it and go to
+					<code>Scene - Armory Scene Trait</code>.</p>
+				<ol>
+					<li>Click <code>+</code>, select <code>Haxe</code> and click <code>OK</code>, <code>Haxe</code>
+						trait placeholder should appear.</li>
+					<li>Click <code>New Script</code> and name the script of your choice, just make sure the first
+						letter is capital(<code>HaxeScript</code> for me).</li>
+					<li>Finally hit <code>Edit Script</code>, you system default IDE should now open up with the
+						project.</li>
+				</ol>
+				<p>Edit the script:</p>
+				<pre><code class="haxe language-haxe">// In HaxeScript.hx
+package arm;
+
+//Imports
+import iron.object.Object;
+import iron.math.Vec4;
+import iron.Scene;
+
+class HaxeScript extends iron.Trait {
+    //Initialise haxeCube as Object
+    var haxeCube:Object;
+
+    public function new() {
+        super();
+        //NotifyOnInit function get excuted when the 'trait' is initiated.
+        notifyOnInit(function() {
+            //Get haxeCube Object from active Scene.
+            haxeCube = Scene.active.getChild("Haxe");
+        });
+
+        //NotifyOnUpdate function get excuted every frame.
+        notifyOnUpdate(function() {
+            //Rotate haxeCube with Vec4(x, y, z) and speed.
+            haxeCube.transform.rotate(new Vec4(0.0, 0.0, 1.0), 0.01);
+        });
+    }
+}
+</code></pre>
+				<p>Now, if you were to play it, you should see <code>Haxe</code> cube rotating!.</p>
+				<h3 id="logicnode">Logic Node</h3>
+				<p>Create a cube, name it <code>Nodes</code> and place it wherever you want. Select it and go to
+					<code>Scene - Armory Scene Trait</code>.</p>
+				<ol>
+					<li>Click <code>+</code>, select <code>Nodes</code> and click <code>OK</code>, <code>Nodes</code>
+						trait placeholder should appear.</li>
+					<li>Change your editor type to <code>Logic Node Editor</code> and click <code>+New</code>.</li>
+					<li>A node tree should be created, you can rename it by editing the text
+						field(<code>LogicNodes</code> for me).</li>
+					<li>Go back to <code>Scene - Armory Scene trait</code>, select you logic nodes place holder and
+						click <code>Tree</code>, select <code>LogicNodes</code> in dropdown.</li>
+				</ol>
+				<p>and now add following nodes(<code>Shift + A</code>):</p>
+				<p><img src="/../../docassets/traits_1.png" alt="" title=":size=500" /></p>
+				<ol>
+					<li>On Update: It is triggered every tick.</li>
+					<li>Rotate object on axis, speed is set directly in vector.</li>
+				</ol>
+				<p>Now if you play it, <code>Nodes</code> cube should start spinnig.</p>
+				<h3 id="wasm">Wasm</h3>
+				<p>Create a cube, name it <code>Wasm</code> and place it wherever you want. Select it and go to
+					<code>Scene - Armory Scene Trait</code>.</p>
+				<ol>
+					<li>Click <code>+</code>, select <code>Wasm</code> and click <code>OK</code>, <code>Wasm</code>
+						trait placeholder should appear.</li>
+					<li>Click <code>New Module</code>, and it should re-direct you to <a
+							href="https://webassembly.studio/">WebAssembly Studio</a>, select
+						<code>Empty Rust Project</code>(you can select c/c++ too) and click <code>Create</code>.</li>
+					<li>Enter <code>Rust</code>/<code>C</code>/<code>C++</code> code and click <code>Build</code> and
+						there should be <code>main.wasm</code> in <code>out</code> folder, right-click and download it.
+					</li>
+					<li>Put outputed <code>main.wasm</code> in <code>Bundled</code> folder (create one, if there is no
+						bundled folder).</li>
+					<li>Go back to <code>Scene - Armory Scene Trait</code>, select previously created <code>Wasm</code>
+						placeholder, click <code>Refresh</code> and select <code>main</code> in <code>Module</code>
+						dropdown.</li>
+				</ol>
+				<pre><code class="rust language-rust">// Rust example of rotating cube
+// main.rs
+extern {
+    fn notify_on_update(f: extern fn() -&gt; ()) -&gt; ();
+    fn get_object(name: *const i8) -&gt; i32;
+    fn set_transform(object: i32, x: f32, y: f32, z: f32, rx: f32, ry: f32, rz: f32, sx: f32, sy: f32, sz: f32) -&gt; ();
+}
+
+#[no_mangle]
+pub extern "C" fn update() -&gt; () {
+    unsafe {
+        let name = std::ffi::CString::new("Wasm").unwrap();
+        let object = get_object(name.as_ptr());
+        static mut rot: f32 = 0.1;
+        rot += 0.01;
+        set_transform(object, 0.0, 0.0, 0.0, 0.0, 0.0, rot, 0.5, 0.5, 0.5);
+    }
+}
+
+#[no_mangle]
+pub extern "C" fn main() -&gt; i32 {
+    unsafe {
+        notify_on_update(update);
+    }
+    return 0;
+}
+</code></pre>
+				<p>Now if you play it then you should have spinny rusty wasm cube.</p>
+				<h3 id="canvas">Canvas</h3>
+				<ol>
+					<li>Click <code>+</code>, select <code>UI</code> and click <code>OK</code>, <code>Canvas</code>
+						trait placeholder should appear.</li>
+					<li>Click <code>New Canvas</code> and enter the name and click <code>Edit Canvas</code>.</li>
+					<li>Add <code>Text</code> element and set text as <code>Hello World from Canvas!</code> and save it.
+					</li>
+				</ol>
+				<p>If you play it now, you should see <code>Hello World from Canvas</code>.</p>
+				<p>Check <a href="docs/Basics/Canvas.md">Canvas tutorial</a> for more!</p>
+				<p><strong>🎉There we go! We covered the basics of Traits!🎉</strong></p>
+				<hr />
+				<p>If anything goes wrong, then you can check the <a
+						href="https://github.com/BlackGoku36/armory-tutorial-sourcecode/tree/master/Traits">source
+						code</a></p>
+			</div>
+		</div>
+
+		<nav aria-label="Page navigation example">
+			<ul class="pagination justify-content-center">
+				<li class="page-item"><a class="page-link" href="index.html"><img src="home.svg" /></a></li>
+				<li class="page-item disabled">
+					<a class="page-link disabled" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+				</li>
+				<li class="page-item"><a class="page-link active " href="#">1</a></li>
+				<li class="page-item"><a class="page-link a" href="#">2</a></li>
+				<li class="page-item"><a class="page-link a" href="#">3</a></li>
+				<li class="page-item">
+					<a class="page-link a" href="#">Next</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="mt-5">
+			<div class="row justify-content-center border-top border-dark pt-3 mr-1">
+				<div class="col-6 text-center mt-3 mb-3 border-right border-dark"><a href="#" class="link">FAQ</a></div>
+				<div class="col-6 text-center mt-3 mb-3"><a href="#" class="link">Newsletter</a></div>
+			</div>
+			<div class="row justify-content-center mr-1">
+				<div class="col-6 text-center mt-3 mb-3 border-right border-dark"><a href="#" class="link">Github</a>
+				</div>
+				<div class="col-6 text-center mt-3 mb-3"><a href="#" class="link">Contact</a></div>
+			</div>
+			<div class="row justify-content-center muted mr-1">
+				<div class="col-6 text-center mt-3 mb-3">@Copyright</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+	<script src="../../highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script src="../../script.js"></script>
+</body>
+
+</html>
