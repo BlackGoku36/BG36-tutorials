@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../../doc.css">
     <link rel="stylesheet" href="../../../atom-one-dark.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>BG36-Tutorials | TUT-1</title>
+    <title>Save/Load | Part-1</title>
 </head>
 <body class="purple-grey">
     <div id="sidebar" class="sidebar">
@@ -23,8 +23,9 @@
 <li>Create a Haxe trait <code>SaveLoadMechanism</code>, we will use this for handling our save and load mechanism.</li>
 </ol>
 <!-- tabs:start -->
-<h4 id="saveloadmechanismhx"><strong>SaveLoadMechanism.hx</strong></h4>
-<pre><code class="haxe language-haxe">package arm;
+<pre><code class="haxe language-haxe">// SaveLoadMechanism.hx
+    
+package arm;
 
 class SaveLoadMechanism extends iron.Trait {
     public function new() {
@@ -65,8 +66,9 @@ class SaveLoadMechanism extends iron.Trait {
 <p>Now, if you play the game and go over to <code>root_folder/build_file/debug/krom/</code> you should find <code>save_game.json</code> and on opening it should read <code>{"text":"Hello World!"}</code>, if you do, then Congratulation! You did it!</p>
 <p>Let save <code>save_game.json</code> to proper place and add some keyboard input code to handle saving manually instead of saving when the game initiate.</p>
 <!-- tabs:start -->
-<h4 id="saveloadmechanismhx-1"><strong>SaveLoadMechanism.hx</strong></h4>
-<pre><code class="haxe language-haxe">package arm;
+<pre><code class="haxe language-haxe">// SaveLoadMechanism.hx
+    
+package arm;
 import iron.system.Input;
 
 class SaveLoadMechanism extends iron.Trait {
@@ -111,8 +113,9 @@ class SaveLoadMechanism extends iron.Trait {
 <p>We will now add reading functionality, we will read <code>save_game.json</code> from <code>Bundled</code> folder and print <code>text</code> value in debug console.</p>
 <p>Now let get to code:</p>
 <!-- tabs:start -->
-<h4 id="saveloadmechanism"><strong>SaveLoadMechanism</strong></h4>
-<pre><code class="haxe language-haxe">package arm;
+<pre><code class="haxe language-haxe">// SaveLoadMechanism.hx
+    
+package arm;
 
 import iron.system.Input;
 import iron.data.Data;
@@ -159,7 +162,7 @@ class SaveLoadMechanism extends iron.Trait {
 <hr />
 <!-- tabs:end -->
 <p>Hit <code>Play</code>, try pressing <code>f</code> and then <code>g</code>, <code>Hello World!</code> should appear in debug console, if it do than that means saving and loading work perfectly!</p>
-<p><img src="../../../docassets/save_load_6.png" alt="printdebugconsole" title=":size=700" /></p>
+<p><img src="../../../docassets/save_load_6.png" alt="printdebugconsole" width="70%" height="70%" /></p>
 <p>And that is for today! In next part we will make it save cube's Location and Rotation.</p>
         </div>
     </div>

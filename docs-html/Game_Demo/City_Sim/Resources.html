@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../../doc.css">
     <link rel="stylesheet" href="../../../atom-one-dark.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>BG36-Tutorials | TUT-1</title>
+    <title>CBS | Resources</title>
 </head>
 <body class="purple-grey">
     <div id="sidebar" class="sidebar">
@@ -77,14 +77,15 @@
 <li>Electricity to be used by house, sawmill, quarry to produce their resources, if they don't get enough electricity, they stop production.</li>
 </ul>
 <p><em>(values are not absolute, it needed to be tweak for final game)</em></p>
-<h3 id="buildingpropertiesstructure">BUILDING PROPERTIES STRUCTURE</h3>
+<h4 id="buildingpropertiesstructure">BUILDING PROPERTIES STRUCTURE</h4>
 <p>Let create proper structure of our building property, where we will store buildings properties such as maximum buildings allowed, cost, production, etc.</p>
 <ol>
 <li>Create new scene Haxe trait <code>WorldController</code>, this will act as our main world controller.</li>
 </ol>
 <!-- tabs:start -->
-<h4 id="worldcontrollerhx"><strong>WorldController.hx</strong></h4>
-<pre><code class="haxe language-haxe">package arm;
+<pre><code class="haxe language-haxe">// WorldController.hx
+    
+package arm;
 //Building properties structure
 typedef BuildingProp = {
     //at: how many building are there currently?, max: how many maximum buildings can be spawned?
@@ -136,11 +137,12 @@ class WorldController extends iron.Trait {
 <p></details></p>
 <hr />
 <!-- tabs:end -->
-<h3 id="recalculatebuildings">RECALCULATE BUILDINGS</h3>
+<h4 id="recalculatebuildings">RECALCULATE BUILDINGS</h4>
 <p>We will recalculate buildings from buildings structure and set building properties structure and limit amount of particular buildings that can be spawned.</p>
 <!-- tabs:start -->
-<h4 id="buildingcontrollerhx"><strong>BuildingController.hx</strong></h4>
-<pre><code class="haxe language-haxe">~
+<pre><code class="haxe language-haxe">// BuildingController.hx
+    
+~
 import arm.WorldController;
 
 typedef Building = {~}
@@ -221,11 +223,12 @@ class BuildingController extends iron.Trait{
 <p></details></p>
 <hr />
 <!-- tabs:end -->
-<h3 id="recalculateresources">RECALCULATE RESOURCES</h3>
+<h4 id="recalculateresources">RECALCULATE RESOURCES</h4>
 <p>We will recalculate resources after we spawn the building, i.e., after spawning we subtract the building's resource cost from total resources. And we will also limit buildings from being spawned if total resource is less than building's resource cost.</p>
 <!-- tabs:start -->
-<h4 id="worldcontrollerhx-1"><strong>WorldController.hx</strong></h4>
-<pre><code class="haxe language-haxe">~
+<pre><code class="haxe language-haxe">// WorldController.hx
+    
+~
 typedef BuildingProp = {~}
 
 class WorldController extends iron.Trait {
@@ -254,8 +257,9 @@ class WorldController extends iron.Trait {
 </ol>
 <p></details></p>
 <hr />
-<h4 id="buildingcontrollerhx-1"><strong>BuildingController.hx</strong></h4>
-<pre><code class="haxe language-haxe">~
+<pre><code class="haxe language-haxe">// BuildingController.hx
+    
+~
 typedef Building = {~}
 class BuildingController extends iron.Trait{
     ~
@@ -321,11 +325,12 @@ class BuildingController extends iron.Trait{
 <p></details></p>
 <hr />
 <!-- tabs:end -->
-<h3 id="producingresources">PRODUCING RESOURCES</h3>
+<h4 id="producingresources">PRODUCING RESOURCES</h4>
 <p>Now, we want buildings to produce resources at given interval. This can be simply done by using kha's Scheduler timetask.</p>
 <!-- tabs:start -->
-<h4 id="worldcontrollerhx-2"><strong>WorldController.hx</strong></h4>
-<pre><code class="haxe language-haxe">package arm;
+<pre><code class="haxe language-haxe">// WorldController.hx
+    
+package arm;
 
 import kha.Scheduler;
 
@@ -400,7 +405,6 @@ class WorldController extends iron.Trait {
 <p></details></p>
 <hr />
 <!-- tabs:end -->
-<hr />
 <h2 id="canvas">CANVAS</h2>
 <p>We will use <code>Canvas</code> to display our resources with progress bars.</p>
 <ol>
@@ -419,16 +423,16 @@ class WorldController extends iron.Trait {
 <ol>
 <li><code>Name</code>: moneypb, woodpb, stonepb, electricitypb. <code>Progress</code>: 0. <code>Total progress</code>: 100</li></ol></li>
 </ol>
-<p><img src="/../../../docassets/CBS_2_1.png" alt="" /></p>
-<p>!&gt; Make sure to use latest Armory3D, as Armory2D got new goodies!</p>
+<p><img src="../../../docassets/CBS_2_1.png" alt="" width="70%" height="70%" /></p>
 <hr />
 <p>On to the script, to control the amount and progress bars.</p>
 <ol>
 <li>Create new Haxe trait <code>MainCanvasController</code></li>
 </ol>
 <!-- tabs:start -->
-<h4 id="maincanvascontrollerhx"><strong>MainCanvasController.hx</strong></h4>
-<pre><code class="haxe language-haxe">package arm;
+<pre><code class="haxe language-haxe">// MainCanvasController.hx
+    
+package arm;
 
 import armory.trait.internal.CanvasScript;
 import iron.Scene;
@@ -481,9 +485,8 @@ class MainCanvasController extends iron.Trait {
 </details></p>
 <hr />
 <!-- tabs:end -->
-<hr />
 <p>Putting it all together and you should get something like this:</p>
-<p><img src="/../../../docassets/CBS_2_2.gif" alt="" title=":size=400" /></p>
+<p><img src="../../../docassets/CBS_2_2.gif" alt="" width="70%" height="70%" /></p>
 <p><strong>🎉 And We did it! We completed resources part! 🎉</strong></p>
 <hr />
 <p>If you have any problem then you can check the source code at <a href="https://github.com/BlackGoku36/CBST-A3D">CBST-A3D</a></p>

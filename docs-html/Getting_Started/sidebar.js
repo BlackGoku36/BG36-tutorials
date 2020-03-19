@@ -42,6 +42,7 @@ document.write(`
     <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-container">
+        <a href="../Game_Demo/City_Sim/Introduction.html">Introduction</a>
         <a href="../Game_Demo/City_Sim/Basics.html">Basics</a>
         <a href="../Game_Demo/City_Sim/Resources.html">Resources</a>
         <a href="../Game_Demo/City_Sim/UI.html">UI</a>

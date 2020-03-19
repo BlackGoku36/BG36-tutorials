@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../../doc.css">
     <link rel="stylesheet" href="../../../atom-one-dark.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>BG36-Tutorials | TUT-1</title>
+    <title>CBS | UI</title>
 </head>
 <body class="purple-grey">
     <div id="sidebar" class="sidebar">
@@ -59,14 +59,15 @@
 <li><code>factory_btn</code>: <code>factory_btn</code></li>
 <li><code>community_btn</code>: <code>community_btn</code></li></ul></li>
 </ol>
-<p><img src="/../../../docassets/CBS_3_1.png" alt="" title=":size=800" /></p>
+<p><img src="../../../docassets/CBS_3_1.png" alt="" width="70%" height="70%" /></p>
 <div class="alert alert-info" role="alert">
     HOW-TO: To parent any element, select the child element and the right click-hold the element and left click the parent element.
 </div>
 <p>Now to add Main menu hiding and showing:</p>
 <!-- tabs:start -->
-<h4 id="mainmenucontrollerhx"><strong>MainMenuController.hx</strong></h4>
-<pre><code class="haxe language-haxe">package arm;
+<pre><code class="haxe language-haxe">// MainMenuController.hx
+    
+package arm;
 
 import armory.trait.internal.CanvasScript;
 import armory.system.Event;
@@ -129,7 +130,7 @@ class MainCanvasController extends iron.Trait {
 <hr />
 <!-- tabs:end -->
 <p>On playing, you should get:</p>
-<p><img src="/../../../docassets/CBS_3_2.gif" alt="" title=":size=400" /></p>
+<p><img src="../../../docassets/CBS_3_2.gif" alt="" width="70%" height="70%" /></p>
 <hr />
 <p>Now, we will add building menu. Here you should be able to select whatever building you want to spawn.</p>
 <ol>
@@ -163,12 +164,13 @@ class MainCanvasController extends iron.Trait {
 <li><code>bld_menu_btn_3</code>: <code>bld_menu_btn_3</code></li>
 <li><code>bld_menu_btn_4</code>: <code>bld_menu_btn_4</code></li></ul></li>
 </ol>
-<p><img src="/../../../docassets/CBS_3_3.png" alt="" title=":size=800" /></p>
+<p><img src="../../../docassets/CBS_3_3.png" alt="" width="80%" height="80%" /></p>
 <p>We will break building type in 3 categories, that is, <code>House</code>, <code>Factory</code>, <code>Community</code>.</p>
 <p>Now, let's get to code.</p>
 <!-- tabs:start -->
-<h4 id="maincanvascontrollerhx"><strong>MainCanvasController.hx</strong></h4>
-<pre><code class="haxe language-haxe">package arm;
+<pre><code class="haxe language-haxe">// MainCanvasController.hx
+    
+package arm;
 ~
 class MainCanvasController extends iron.Trait {
 
@@ -300,9 +302,8 @@ class MainCanvasController extends iron.Trait {
 </ol>
 <hr />
 <!-- tabs:end -->
-<hr />
 <p>Now, you should get like:</p>
-<p><img src="/../../../docassets/CBS_3_4.gif" alt="" title=":size=400" /></p>
+<img src="../../../docassets/CBS_3_4.gif" alt="" width="70%" height="70%" />
         </div>
     </div>
     <nav aria-label="Page navigation example">

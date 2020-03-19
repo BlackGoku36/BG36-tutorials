@@ -1,5 +1,5 @@
 document.write(`
-<h3 class="sidebar-h"><a href="../../index.html">BG36-Tutorials</a></h3>
+<h3 class="sidebar-h"><a href="../../../index.html">BG36-Tutorials</a></h3>
 <p class="sidebar-sub">Armory</p>
 <hr>
 
@@ -45,6 +45,7 @@ document.write(`
     <i class="fa fa-caret-down"></i>
     </button>
     <div class="active dropdown-container">
+        <a href="Introduction.html">Introduction</a>
         <a href="Basics.html">Basics</a>
         <a href="Resources.html">Resources</a>
         <a href="UI.html">UI</a>
