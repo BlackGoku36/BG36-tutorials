@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../doc.css">
+    <link rel="stylesheet" href="../../../atom-one-dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>BG36-Tutorials | TUT-1</title>
+</head>
+<body class="purple-grey">
+    <div id="sidebar" class="sidebar">
+        <script src="../sidebar.js"></script>
+    </div>
+    <div id="main">
+        <script src="../../../main1.js"></script>
+        <script>main("Save/Load Part-3");</script>
+        <p>In this third and the last part we will add UI to our game for gamey effect.</p>
+<p>Create a new scene Canvas trait(<code>SaveLoad</code>) and add following elements and set their event as 'save<em>btn' and 'load</em>btn':</p>
+<p><img src="../../../docassets/save_load_12.png" alt="canvasbtn" title=":size=700" /></p>
+<p>and if you play it, you should get something like this:</p>
+<p><img src="../../../docassets/save_load_13.png" alt="menu" title=":size=700" /></p>
+<p>Now to button functionality, we will implement it in <code>SaveLoadMechanism.hx</code></p>
+<pre><code class="haxe language-haxe">// In SaveLoadMechanism.hx
+package arm;
+
+import armory.system.Event;
+import iron.Scene;
+                ~
+class SaveLoadMechanism extends iron.Trait {
+                ~
+    public function new() {
+        super();
+
+        notifyOnInit(function(){
+            //Add event listener with string defined in Armory2D.
+            Event.add("save_btn", save);
+            Event.add("load_btn", load);
+        });
+
+    }
+                ~
+</code></pre>
+<p>For our last and final feature, we are going to hide buttons on start and then we will able to show and hide them with <code>m</code>.</p>
+<pre><code class="haxe language-haxe">// In SaveLoadMechanism.hx
+
+            ~
+import armory.trait.internal.CanvasScript;// 1
+
+typedef Cube = { loc : Vec4, rot : Vec4 }
+
+class SaveLoadMechanism extends iron.Trait {
+                ~
+    var canvas:CanvasScript;
+
+    var isButtonsHidden:Bool;
+
+    public function new() {
+        super();
+
+        notifyOnInit(function(){
+            //Get CanvasScript trait from active scene.
+            canvas = Scene.active.getTrait(CanvasScript);
+            hideButtons();
+            isButtonsHidden = true;
+                        ~
+        });
+
+        notifyOnUpdate(function (){
+            if (kb.started("m")){
+                if (isButtonsHidden){
+                    showButtons();
+                }else{
+                    hideButtons();
+                }
+            }
+        });
+    }
+
+    public function save() { ~ }
+
+    public function load() { ~ }
+
+    public function hideButtons() {
+        //Set Element visible property to false to hide the element
+        canvas.getElement("save_btn").visible = false;
+        canvas.getElement("load_btn").visible = false;
+        isButtonsHidden = true;
+    }
+
+    public function showButtons() {
+        //Set Element visible property to true to show the element
+        canvas.getElement("save_btn").visible = true;
+        canvas.getElement("load_btn").visible = true;
+        isButtonsHidden = false;
+    }
+}
+</code></pre>
+<p>You should get the following result:</p>
+<iframe width="640" height="480" src="https://blackgoku36.github.io/armory-tutorials/docassets/save_load_final.mp4" frameborder="0" allowfullscreen> </iframe>
+<p><strong>🎉There we go! Save and Load mechanism tutorial is over!🎉</strong></p>
+<hr />
+<p>For further improving, you can:</p>
+<ol>
+<li>Encrypt the file, so that people don't cheat.</li>
+<li>Add more value for it to save.</li>
+<li>Make GTA XII</li>
+</ol>
+        </div>
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link a" href="Save_Load_2.html" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link a " href="Save_Load_Mechanism.html">1</a></li>
+            <li class="page-item"><a class="page-link a" href="Save_Load_1.html">2</a></li>
+            <li class="page-item"><a class="page-link a" href="Save_Load_2.html">3</a></li>
+            <li class="page-item"><a class="page-link active" href="Save_Load_3.html">4</a></li>
+            <li class="page-item disabled">
+                <a class="page-link disabled" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+    <script src="../../../main2.js"></script>
+    <script>create("../../../")</script>
+</body>
+</html>

@@ -49,7 +49,9 @@ Let's get started!
 
 ![](/../../../docassets/CBS_3_1.png ':size=800')
 
-?> **How-to:** To parent any element, select the child element and the right click-hold the element and left click the parent element.
+<div class="alert alert-info" role="alert">
+  HOW-TO: To parent any element, select the child element and the right click-hold the element and left click the parent element.
+</div>
 
 Now to add Main menu hiding and showing:
 

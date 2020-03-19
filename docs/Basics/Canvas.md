@@ -1,8 +1,6 @@
-## Canvas
-
----
-
-!> THIS IS DATED! ARMORY2D HAS EVOLVED A LOT SINCE WRITING THIS!
+<div class="alert alert-warning" role="alert">
+  THIS IS DATED! ARMORY2D HAS EVOLVED A LOT SINCE WRITING THIS!
+</div>
 
 In this tutorial, we will create canvas using Armory2D, learn about it and then add and control canvas's element using `haxe`.
 
@@ -12,13 +10,13 @@ Our Goal:
 ---
 Fire up Armory3D project, once you have it up, go to `Scene - Armory Scene Trait`, create new `Canvas Trait`, name it `UI` and hit `Edit Canvas`. A window named Armory2D should pop-up:
 
-![Armory2d Image](../../docassets/armory2D.png ':size=700')
+![Armory2d Image](../../docassets/armory2D.png =70%x70%)
 
 ---
 
 Let study its user interface:
 
-![Canvas's Layout Image](../../docassets/CanvasLayout.png ':size=700')
+![Canvas's Layout Image](../../docassets/CanvasLayout.png =70%x70%)
 
 1. This is where you can add elements from.
 2. This is `Canvas`'s area, where you arrange for you window.
@@ -49,7 +47,7 @@ Let study its user interface:
 
 Let add elements:
 
-![](../../docassets/canvas_2.png ':size=700')
+![](../../docassets/canvas_2.png =70%x70%)
 
 1. `Text`: Add Text `txt`, We will control this by using below UI (sliders, input, etc).
 2. `Sliders`: Add 3 sliders `slider_r`, `slider_g`, `slider_b` to control rgb value of the `txt`.
@@ -65,7 +63,7 @@ Let add elements:
 
 When you run the game, you should see something like this:
 
-![](../../docassets/canvas_3.png ':size=700')
+![](../../docassets/canvas_3.png =70%x70%)
    
 ---
 
@@ -226,7 +224,10 @@ class CanvasController extends iron.Trait {
 	}
 }
 ```
-?> Armory uses radians almost everywhere so be sure to convert it to degrees.
+
+<div class="alert alert-tip" role="alert">
+	Armory uses radians almost everywhere so be sure to convert it to degrees.
+</div>
 
 Now on playing it, you should get our goal.
 

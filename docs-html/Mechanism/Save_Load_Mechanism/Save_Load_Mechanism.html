@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../doc.css">
+    <link rel="stylesheet" href="../../../atom-one-dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>BG36-Tutorials | TUT-1</title>
+</head>
+<body class="purple-grey">
+    <div id="sidebar" class="sidebar">
+        <script src="../sidebar.js"></script>
+    </div>
+    <div id="main">
+        <script src="../../../main1.js"></script>
+        <script>main("Save/Load Mechanism");</script>
+        <p>Save/load is one of the most important feature in game, whether it is single-player or multi-player game. In case of single-player, the game data can be saved to local drive, with encryption so that cheating is not made easy. On other hand, in multi-players game, game data is saved to server hosted by the game development group.</p>
+<p>Ever wondered how this is generally done? Well, Saving and loading mechanism can be done by simply writing data into file and reading from it. <a href="https://en.wikipedia.org/wiki/JSON">Json</a> and <a href="https://en.wikipedia.org/wiki/XML">Xml</a> file formats are popularly used for this purpose for small game, but you can write your own format <em>(structure, parser, encryption, etc)</em> if you are into writing your own stuffs. <em>(we are talking about small game that you share with friend, for fun and nothing serious, writing save/load mechanism for AAA games involves lot of other things)</em>.</p>
+<p>We will be creating save/load game mechanism in <code>Armory3D</code>. For simplicity sake, we will be using <code>Json</code> to store in our game data and not use any sort of encrytion <em>(this kind of stuffs are left for you as 'DIY')</em>.</p>
+<p>This tutorial is divided into 3 parts:</p>
+<ol>
+<li>Setup the mechanism, we will only look into writing and reading file in-game.</li>
+<li>Finally add saving and loading cube's Location and Rotation.</li>
+<li>Close this tutorial by adding UI for saving and loading for more gamey experience.</li>
+</ol>
+<p>At the end of this tutorial you should be at-least be able to save data into <code>json</code>, read from it and control it with UI. And you should get something like this:</p>
+<iframe width="640" height="480" src="https://blackgoku36.github.io/armory-tutorials/docassets/save_load_final.mp4" frameborder="0" allowfullscreen> </iframe>
+<p>If anything goes wrong, then you can check the <a href="https://github.com/BlackGoku36/armory-tutorial-download/tree/master/SaveLoadMechanism">source code</a></p>
+        </div>
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link disabled" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link active " href="Save_Load_Mechanism.html">1</a></li>
+            <li class="page-item"><a class="page-link a" href="Save_Load_1.html">2</a></li>
+            <li class="page-item"><a class="page-link a" href="Save_Load_2.html">3</a></li>
+            <li class="page-item"><a class="page-link a" href="Save_Load_3.html">4</a></li>
+            <li class="page-item">
+                <a class="page-link a" href="Save_Load_1.html">Next</a>
+            </li>
+        </ul>
+    </nav>
+    <script src="../../../main2.js"></script>
+    <script>create("../../../")</script>
+</body>
+</html>

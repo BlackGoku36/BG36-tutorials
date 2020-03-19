@@ -1,18 +1,3 @@
-## Setup
-
----
-
-Setting up Armory in Blender.
-
-- [Setup](#setup)
-	- [Downloading the add-on](#downloading-the-add-on)
-	- [Git](#git)
-	- [Itch.io](#itchio)
-	- [Installing the add-on](#installing-the-add-on)
-	- [Updating the add-on](#updating-the-add-on)
-
----
-
 ### Downloading the add-on
 
 #### Git
@@ -39,7 +24,7 @@ git submodule foreach --recursive git pull origin master
 
 ### Installing the add-on
 
-![prefs](../../docassets/setup_1.png ':size=800')
+![prefs](../../docassets/setup_1.png =80%x80%)
 
 1. Open Blender, go to `Edit - Preference`, `Blender Preference` should open, click `install`, locate the armsdk and select `armory.py` and click `install Add-on from File..` and save preference(Three dash icon from bottom left corner)
 2. Restart Blender, and head back to preference and go to `Render: Armory` add-on, and to `Preferences - SDK Path` and enter the your path to armsdk, and then finally save it again.

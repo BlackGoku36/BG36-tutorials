@@ -22,82 +22,61 @@
 
 	<div id="main">
 		<script src="../../main1.js"></script>
-		<script>main("Setup");</script>
-
-			<p>Setting up Armory in Blender.</p>
-			<ul>
-				<li><a href="#setup">Setup</a>
-					<ul>
-						<li><a href="#downloading-the-add-on">Downloading the add-on</a></li>
-						<li><a href="#git">Git</a></li>
-						<li><a href="#itchio">Itch.io</a></li>
-						<li><a href="#installing-the-add-on">Installing the add-on</a></li>
-						<li><a href="#updating-the-add-on">Updating the add-on</a></li>
-					</ul>
-				</li>
-			</ul>
-			<hr />
-			<h3 id="downloadingtheaddon">Downloading the add-on</h3>
-			<h4 id="git">Git</h4>
-			<p>Installing Armory using Git is easy task.</p>
-			<ol>
-				<li>Get <a href="https://www.blender.org/download/">Blender</a> if you don't already have.</li>
-				<li>Open Terminal/Command Prompt, locate directory where the Blender is.</li>
-				<li>Enter following command:</li>
-			</ol>
-			<pre><code class="bash language-bash">git clone --recursive https://github.com/armory3d/armsdk
+		<script>main("Setting up Armory3D");</script>
+		<h3 id="downloadingtheaddon">Downloading the add-on</h3>
+<h4 id="git">Git</h4>
+<p>Installing Armory using Git is easy task.</p>
+<ol>
+<li>Get <a href="https://www.blender.org/download/">Blender</a> if you don't already have.</li>
+<li>Open Terminal/Command Prompt, locate directory where the Blender is.</li>
+<li>Enter following command:</li>
+</ol>
+<pre><code class="bash language-bash">git clone --recursive https://github.com/armory3d/armsdk
 cd armsdk
 git submodule foreach --recursive git pull origin master
-			</code></pre>
-			<ol start="4">
-				<li>Follow <code>Installing the add-on</code> steps.</li>
-			</ol>
-			<h4 id="itchio">Itch.io</h4>
-			<ol>
-				<li>Go to <a href="https://armory.itch.io/armory3d">itch.io</a>, and then download
-					<code>ArmorySDK-20XX-XX.zip</code></li>
-				<li>Unpack it and place it where ever you want.</li>
-				<li>Follow <code>Installing the add-on</code> steps.</li>
-			</ol>
-			<hr />
-			<h3 id="installingtheaddon">Installing the add-on</h3>
-			<p><img src="../../docassets/setup_1.png" alt="prefs" title=":size=800" /></p>
-			<ol>
-				<li>Open Blender, go to <code>Edit - Preference</code>, <code>Blender Preference</code> should open,
-					click <code>install</code>, locate the armsdk and select <code>armory.py</code> and click
-					<code>install Add-on from File..</code> and save preference(Three dash icon from bottom left
-					corner)</li>
-				<li>Restart Blender, and head back to preference and go to <code>Render: Armory</code> add-on, and
-					to <code>Preferences - SDK Path</code> and enter the your path to armsdk, and then finally save
-					it again.</li>
-				<li>Restart the Blender again and Armory's new UIs should be there.</li>
-			</ol>
-			<hr />
-			<h3 id="updatingtheaddon">Updating the add-on</h3>
-			<ol>
-				<li>Go to Armory add-on tab and then click <code>Update SDK</code>.</li>
-				<li>Open terminal/command prompt and check the progress, when it is done, it should say
-					<code>Armory is sucessfully updated. Restart Blender</code>.</li>
-				<li>Restart Blender</li>
-			</ol>
+</code></pre>
+<ol start="4">
+<li>Follow <code>Installing the add-on</code> steps.</li>
+</ol>
+<h4 id="itchio">Itch.io</h4>
+<ol>
+<li>Go to <a href="https://armory.itch.io/armory3d">itch.io</a>, and then download <code>ArmorySDK-20XX-XX.zip</code></li>
+<li>Unpack it and place it where ever you want.</li>
+<li>Follow <code>Installing the add-on</code> steps.</li>
+</ol>
+<hr />
+<h3 id="installingtheaddon">Installing the add-on</h3>
+<p><img src="../../docassets/setup_1.png" alt="prefs" width="80%" height="80%" /></p>
+<ol>
+<li>Open Blender, go to <code>Edit - Preference</code>, <code>Blender Preference</code> should open, click <code>install</code>, locate the armsdk and select <code>armory.py</code> and click <code>install Add-on from File..</code> and save preference(Three dash icon from bottom left corner)</li>
+<li>Restart Blender, and head back to preference and go to <code>Render: Armory</code> add-on, and to <code>Preferences - SDK Path</code> and enter the your path to armsdk, and then finally save it again.</li>
+<li>Restart the Blender again and Armory's new UIs should be there.</li>
+</ol>
+<hr />
+<h3 id="updatingtheaddon">Updating the add-on</h3>
+<ol>
+<li>Go to Armory add-on tab and then click <code>Update SDK</code>.</li>
+<li>Open terminal/command prompt and check the progress, when it is done, it should say <code>Armory is sucessfully updated. Restart Blender</code>.</li>
+<li>Restart Blender</li>
+</ol>
 		</div>
 	</div>
 	<nav aria-label="Page navigation example">
 		<ul class="pagination justify-content-center">
-			<li class="page-item"><a class="page-link" href="index.html"><img src="home.svg" /></a></li>
-			<li class="page-item disabled">
-				<a class="page-link disabled" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-			</li>
-			<li class="page-item"><a class="page-link active " href="#">1</a></li>
-			<li class="page-item"><a class="page-link a" href="#">2</a></li>
-			<li class="page-item"><a class="page-link a" href="#">3</a></li>
 			<li class="page-item">
-				<a class="page-link a" href="#">Next</a>
+				<a class="page-link a" href="introduction.html" tabindex="-1" aria-disabled="true">Previous</a>
+			</li>
+			<li class="page-item"><a class="page-link a " href="introduction.html">1</a></li>
+			<li class="page-item"><a class="page-link active" href="setup.html">2</a></li>
+			<li class="page-item"><a class="page-link a" href="pitfalls_misconception.html">3</a></li>
+			<li class="page-item">
+				<a class="page-link a" href="pitfalls_misconception.html">Next</a>
 			</li>
 		</ul>
 	</nav>
 
 	<script src="../../main2.js"></script>
+	<script>create("../../")</script>
 </body>
 
 </html>

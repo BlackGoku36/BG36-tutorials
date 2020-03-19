@@ -1,7 +1,3 @@
-## BASICS
-
----
-
 In `Basics` part we will establish basics of city buildings, such as placing, moving, etc of buildings with player interaction.
 
 ---

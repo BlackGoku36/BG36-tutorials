@@ -23,6 +23,28 @@ document.write(`
     <i class="fa fa-caret-down"></i>
 </button>
 <div class="dropdown-container">
-    <a href="#">Save/Load Game</a>
+    <button class="dropdown-btn">Save/Load
+    <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <a href="../Mechanism/Save_Load_Mechanism/Save_Load_Mechanism.html">Introduction</a>
+        <a href="../Mechanism/Save_Load_Mechanism/Save_Load_1.html">Part-1</a>
+        <a href="../Mechanism/Save_Load_Mechanism/Save_Load_2.html">Part-2</a>
+        <a href="../Mechanism/Save_Load_Mechanism/Save_Load_3.html">Part-3</a>
+    </div>
+</div>
+
+<button class="dropdown-btn">Game Demo
+    <i class="fa fa-caret-down"></i>
+</button>
+<div class="dropdown-container">
+    <button class="dropdown-btn">CBS
+    <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <a href="../Game_Demo/City_Sim/Basics.html">Basics</a>
+        <a href="../Game_Demo/City_Sim/Resources.html">Resources</a>
+        <a href="../Game_Demo/City_Sim/UI.html">UI</a>
+    </div>
 </div>
 `);

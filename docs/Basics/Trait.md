@@ -81,7 +81,7 @@ Create a cube, name it `Nodes` and place it wherever you want. Select it and go 
 
 and now add following nodes(`Shift + A`):
 
-![](/../../docassets/traits_1.png ':size=500')
+![](../../docassets/traits_1.png ':size=500')
 
 1. On Update: It is triggered every tick.
 2. Rotate object on axis, speed is set directly in vector.
