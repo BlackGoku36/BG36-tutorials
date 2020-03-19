@@ -2,19 +2,17 @@ function create(dir) {
 	
 	document.write(`
 	
-	<div class="mt-5">
-	<div class="row justify-content-center border-top border-dark pt-3 mr-1">
-	<div class="col-6 text-center mt-3 mb-3 border-right border-dark"><a href="#" class="link">FAQ</a></div>
-	<div class="col-6 text-center mt-3 mb-3"><a href="#" class="link">Newsletter</a></div>
-	</div>
-	<div class="row justify-content-center mr-1">
-	<div class="col-6 text-center mt-3 mb-3 border-right border-dark"><a href="#" class="link">Github</a>
-	</div>
-	<div class="col-6 text-center mt-3 mb-3"><a href="#" class="link">Contact</a></div>
-	</div>
-	<br>
-	</div>
-	</div>
+    <div class="mt-5">
+        <div class="row justify-content-center border-top border-dark pt-3 mr-1">
+            <div class="col-6 text-center mt-3 mb-3 border-right border-dark"><a href="docs-html/FAQ.html" class="link">FAQ</a></div>
+            <div class="col-6 text-center mt-3 mb-3"><a href="https://tinyletter.com/BG36" class="link">Newsletter</a></div>
+        </div>
+        <div class="row justify-content-center mr-1">
+            <div class="col-6 text-center mt-3 mb-3 border-right border-dark"><a href="https://github.com/BlackGoku36/BG36-tutorials/tree/master" class="link">Github</a></div>
+            <div class="col-6 text-center mt-3 mb-3"><a href="mailto:urjasvisuthar@gmail.com" class="link">Contact</a></div>
+		</div>
+		<br>
+    </div>
 	
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
