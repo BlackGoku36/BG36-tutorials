@@ -12,9 +12,7 @@ function create(dir) {
 	</div>
 	<div class="col-6 text-center mt-3 mb-3"><a href="#" class="link">Contact</a></div>
 	</div>
-	<div class="row justify-content-center muted mr-1">
-	<div class="col-6 text-center mt-3 mb-3">@Copyright</div>
-	</div>
+	<br>
 	</div>
 	</div>
 	

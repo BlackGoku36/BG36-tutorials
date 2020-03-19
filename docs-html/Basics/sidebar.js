@@ -48,4 +48,11 @@ document.write(`
         <a href="../Game_Demo/City_Sim/UI.html">UI</a>
     </div>
 </div>
+
+<button class="dropdown-btn">Other
+    <i class="fa fa-caret-down"></i>
+</button>
+<div class="active dropdown-container">
+    <a href="../FAQ.html">FAQ</a>
+</div>
 `);

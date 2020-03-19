@@ -1,7 +1,3 @@
-## FAQ
-
----
-
 <details>
 	<summary>I HAVE PROBLEM WITH THIS TUTORIAL, WHAT CAN I DO?</summary>
 
