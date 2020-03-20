@@ -72,7 +72,7 @@ code{
 }
 
 h2{
-	margin-left: 100px;
+	margin-left: 70px;
 }
 
 hr{
@@ -170,6 +170,7 @@ hr{
 }
 
 #main {
+	overflow-x: hidden;
 	margin-left: 250px;
 	transition: margin-left .5s;
 	padding: 20px;
