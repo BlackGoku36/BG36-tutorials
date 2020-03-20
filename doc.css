@@ -1,9 +1,9 @@
 @font-face {
 	font-family: "Segoe UI";
-	src: url(segoeui.ttf) format("truetype");
+	src: url(docassets/segoeui.ttf) format("truetype");
 }
 
-@import url(cascadia.ttf);
+@import url(docassets/cascadia.ttf);
 
 .alert-danger{
 	color: white;

@@ -1,2 +1,3 @@
 # BG36-tutorials
-Tutorial site
+
+Tutorial for Armory3D, Iron and Kha.
