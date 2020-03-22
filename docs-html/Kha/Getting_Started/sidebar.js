@@ -1,5 +1,5 @@
 document.write(`
-<h3 class="sidebar-h"><a href="../../index.html">BG36-Tutorials</a></h3>
+<h3 class="sidebar-h"><a href="../../../index.html">BG36-Tutorials</a></h3>
 <p class="sidebar-sub">Kha</p>
 <hr>
 <button class="dropdown-btn">Get Started
