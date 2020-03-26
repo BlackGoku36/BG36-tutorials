@@ -6,8 +6,8 @@ document.write(`
     <i class="fa fa-caret-down"></i>
 </button>
 <div class="active dropdown-container">
-    <a href="introduction.html">Introduction</a>
-    <a href="setup.html">Setup</a>
+    <a href="Introduction.html">Introduction</a>
+    <a href="Setup.html">Setup</a>
 </div>
 
 <button class="dropdown-btn">Other
