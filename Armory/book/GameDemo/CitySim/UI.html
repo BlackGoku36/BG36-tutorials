@@ -1,0 +1,559 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js dark">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>UI - BG-36's Tutorials | Armory</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The example book covers examples.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "dark";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('dark')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../a.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../GettingStarted/Introduction.html"><strong aria-hidden="true">1.1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../../GettingStarted/Setup.html"><strong aria-hidden="true">1.2.</strong> Setup</a></li><li class="chapter-item expanded "><a href="../../GettingStarted/PitAndMis.html"><strong aria-hidden="true">1.3.</strong> Pitfall and Misconception</a></li></ol></li><li class="chapter-item expanded "><a href="../../a.html"><strong aria-hidden="true">2.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Basics/Canvas.html"><strong aria-hidden="true">2.1.</strong> Canvas</a></li><li class="chapter-item expanded "><a href="../../Basics/Navmesh.html"><strong aria-hidden="true">2.2.</strong> Navmesh</a></li><li class="chapter-item expanded "><a href="../../Basics/Tilesheet.html"><strong aria-hidden="true">2.3.</strong> Tilesheet</a></li><li class="chapter-item expanded "><a href="../../Basics/Trait.html"><strong aria-hidden="true">2.4.</strong> Trait</a></li></ol></li><li class="chapter-item expanded "><a href="../../a.html"><strong aria-hidden="true">3.</strong> Mechanism</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Mechanism/SaveLoad/Introduction.html"><strong aria-hidden="true">3.1.</strong> Save and Load Mechanism</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Mechanism/SaveLoad/SL-1.html"><strong aria-hidden="true">3.1.1.</strong> Read/Write file</a></li><li class="chapter-item expanded "><a href="../../Mechanism/SaveLoad/SL-2.html"><strong aria-hidden="true">3.1.2.</strong> Save/Load game file</a></li><li class="chapter-item expanded "><a href="../../Mechanism/SaveLoad/SL-3.html"><strong aria-hidden="true">3.1.3.</strong> UI</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../a.html"><strong aria-hidden="true">4.</strong> Game Demo</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../GameDemo/CitySim/Introduction.html"><strong aria-hidden="true">4.1.</strong> City Sim</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../GameDemo/CitySim/Basics.html"><strong aria-hidden="true">4.1.1.</strong> Basics</a></li><li class="chapter-item expanded "><a href="../../GameDemo/CitySim/Resources.html"><strong aria-hidden="true">4.1.2.</strong> Resources</a></li><li class="chapter-item expanded "><a href="../../GameDemo/CitySim/UI.html" class="active"><strong aria-hidden="true">4.1.3.</strong> UI</a></li><li class="chapter-item expanded "><a href="../../GameDemo/CitySim/FAQ.html"><strong aria-hidden="true">4.1.4.</strong> FAQ</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../HowToRead.html">How-to read</a></li><li class="chapter-item expanded affix "><a href="../../FAQ.html">FAQ</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="dark">Dark (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">BG-36's Tutorials | Armory</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        <a href="https://github.com/BlackGoku36/BG36-tutorials/tree/master" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2><a class="header" href="#user-interface-ui" id="user-interface-ui">User Interface (UI)</a></h2>
+<hr />
+<p>We will create UI in which player will have to rely less on keybinds, that is we will create menu, which will let use spawn any building type of any category easily, create other menus such as settings or layout edit and also interact with buildings with 3D UI.</p>
+<p>This will be split in 2 parts:</p>
+<ul>
+<li>Main Menu UI: This will have placing of building from menu, settings and layout edit.</li>
+<li>3D Menu UI: This will 3D UI that interact with building (such as moving, removing, etc).</li>
+</ul>
+<h3><a class="header" href="#main-menu-ui" id="main-menu-ui">Main Menu UI</a></h3>
+<p>We will be creating main menu UI, we should be able to select building that we desire to place and also able to access other things such as settings, layout edit, etc.</p>
+<p>Let's get started!</p>
+<ol>
+<li>
+<p>Open <code>MainCanvas</code> in <code>Armory2D</code> that was created in previous tutorial and add some elements:</p>
+<ul>
+<li><code>Empty</code>:
+<ul>
+<li><code>menu_empty</code>: We will use this as parent, so that we can make child element visible and invisible easily.</li>
+</ul>
+</li>
+<li><code>Text</code>:
+<ul>
+<li><code>menu_text</code>: We will use this as label for our menu button.</li>
+</ul>
+</li>
+<li><code>Button</code>:
+<ul>
+<li><code>settings_btn</code>: Toggle settings</li>
+<li><code>edit_btn</code>: Go in edit layout mode</li>
+<li><code>house_btn</code>: Toggle house building menu</li>
+<li><code>factory_btn</code>: Toggle factory building menu</li>
+<li><code>community_btn</code>: Toggle community building menu</li>
+</ul>
+</li>
+<li><code>Rect</code>:
+<ul>
+<li><code>menu_rect</code>: Just for style</li>
+</ul>
+</li>
+<li><code>Fill Rect</code>:
+<ul>
+<li><code>menu_bg</code>: act as background for menu buttons</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Now parent following elements to <code>menu_empty</code>:</p>
+<ul>
+<li><code>menu_bg</code></li>
+<li><code>settings_btn</code></li>
+<li><code>edit_btn</code></li>
+<li><code>house_btn</code></li>
+<li><code>factory_btn</code></li>
+<li><code>community_btn</code></li>
+</ul>
+</li>
+<li>
+<p>Now add events to buttons:</p>
+<ul>
+<li><code>settings_btn</code>: <code>settings_btn</code></li>
+<li><code>edit_btn</code>: <code>edit_btn</code></li>
+<li><code>house_btn</code>: <code>house_btn</code></li>
+<li><code>factory_btn</code>: <code>factory_btn</code></li>
+<li><code>community_btn</code>: <code>community_btn</code></li>
+</ul>
+</li>
+</ol>
+<p><img src="../../CBS_3_1.png" alt="Some Image" /></p>
+<blockquote style="border-color: #2c93c4;">
+    <p>
+    To parent any element, select the child element and the right click-hold the element and left click the parent element.
+    </p>
+</blockquote>
+<p>Now to add Main menu hiding and showing:</p>
+<!-- tabs:start -->
+<h4><a class="header" href="#mainmenucontrollerhx" id="mainmenucontrollerhx"><strong>MainMenuController.hx</strong></a></h4>
+<pre><code class="language-haxe">package arm;
+
+import armory.trait.internal.CanvasScript;
+import armory.system.Event;
+
+import arm.WorldController;
+
+class MainCanvasController extends iron.Trait {
+
+    static var maincanvas:CanvasScript;
+
+    var world = WorldController;
+
+    //State of menu, 0 -&gt; closed, 1 -&gt; opened
+    var menuState = 0;
+
+    public function new() {
+        super();
+
+        notifyOnInit(init);
+        notifyOnUpdate(updateCanvas);
+    }
+
+    function init() {
+        maincanvas = new CanvasScript(&quot;MainCanvas&quot;, &quot;Big_shoulders_text.ttf&quot;);
+
+        maincanvas.setCanvasVisibility(true);
+        //Set menu_empty to invisible
+        maincanvas.getElement(&quot;menu_empty&quot;).visible = false;
+        //On 'menu_btn' event
+        Event.add(&quot;menu_btn&quot;, function(){
+            //If closed
+            if (menuState == 0){
+                // Set menu_empty to visible
+                maincanvas.getElement(&quot;menu_empty&quot;).visible = true;
+                // menu is open
+                menuState = 1;
+            //If opened
+            }else if (menuState == 1){
+                //Set menu_empty to invisible
+                maincanvas.getElement(&quot;menu_empty&quot;).visible = false;
+                // menu is close
+                menuState = 0;
+            }
+        });
+    }
+
+    function updateCanvas() { ~ }
+    function updatePB(){ ~ }
+    function updateAmount(){ ~ }
+}
+</code></pre>
+<hr />
+<details>
+    <summary>Code Explanation</summary>
+<ol>
+<li>We first set menuState to closed when declared</li>
+<li>Every time we receive <code>menu_btn</code> event(i.e., <code>menu_btn</code> is pressed). We check if menu is closed, if it is then we show <code>menu_empty</code>(i.e, show all menu buttons) and set <code>menuState</code> to opened. Else if <code>menu_btn</code> is open than we do opposite.</li>
+</ol>
+</details>
+<hr />
+<!-- tabs:end -->
+<p>On playing, you should get:</p>
+<p><img src="../../CBS_3_2.gif" alt="Some Image" /></p>
+<hr />
+<p>Now, we will add building menu. Here you should be able to select whatever building you want to spawn.</p>
+<ol>
+<li>
+<p>Add more element to <code>MainCanvas</code>:</p>
+<ul>
+<li><code>Empty</code>:
+<ul>
+<li><code>bld_menu</code>: We will use this as parent, so that we can make child element visible and invisible easily.</li>
+</ul>
+</li>
+<li><code>Text</code>:
+<ul>
+<li><code>bld_menu_text</code>: We will use this as label for our building category.</li>
+</ul>
+</li>
+<li><code>Button</code>:
+<ul>
+<li><code>bld_menu_btn_1</code>: Spawn 1<sup>st</sup> building type from given category</li>
+<li><code>bld_menu_btn_2</code>: Spawn 2<sup>st</sup> building type from given category</li>
+<li><code>bld_menu_btn_3</code>: Spawn 3<sup>st</sup> building type from given category</li>
+<li><code>bld_menu_btn_4</code>: Spawn 4<sup>st</sup> building type from given category</li>
+</ul>
+</li>
+<li><code>Fill Rect</code>:
+<ul>
+<li><code>bld_menu_bg</code>: Just for style</li>
+<li><code>bld_menu_hr</code>: Just for style</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Now parent following elements to <code>menu_empty</code>:</p>
+<ul>
+<li><code>bld_menu_bg</code></li>
+<li><code>bld_menu_hr</code></li>
+<li><code>bld_menu_text</code></li>
+<li><code>bld_menu_btn_1</code></li>
+<li><code>bld_menu_btn_2</code></li>
+<li><code>bld_menu_btn_3</code></li>
+<li><code>bld_menu_btn_4</code></li>
+</ul>
+</li>
+<li>
+<p>Now add events to buttons:</p>
+<ul>
+<li><code>bld_menu_btn_1</code>: <code>bld_menu_btn_1</code></li>
+<li><code>bld_menu_btn_2</code>: <code>bld_menu_btn_2</code></li>
+<li><code>bld_menu_btn_3</code>: <code>bld_menu_btn_3</code></li>
+<li><code>bld_menu_btn_4</code>: <code>bld_menu_btn_4</code></li>
+</ul>
+</li>
+</ol>
+<p><img src="../../CBS_3_3.png" alt="Some Image" /></p>
+<p>We will break building type in 3 categories, that is, <code>House</code>, <code>Factory</code>, <code>Community</code>.</p>
+<p>Now, let's get to code.</p>
+<!-- tabs:start -->
+<h4><a class="header" href="#maincanvascontrollerhx" id="maincanvascontrollerhx"><strong>MainCanvasController.hx</strong></a></h4>
+<pre><code class="language-haxe">package arm;
+~
+class MainCanvasController extends iron.Trait {
+
+    static var maincanvas:CanvasScript;
+
+    var world = WorldController;
+    var bld = BuildingController;
+
+    var menuState = 0;
+    //0 -&gt; no button, 1 -&gt; Settings button, 2 -&gt; Edit layout button
+    //3 -&gt; House button, 4 -&gt; Factory button, 5 -&gt; community button
+    var bldMenuBtn = 0;
+    // 0 -&gt; closed bld menu, 3 -&gt; House bld menu, 4 -&gt; Factory bld menu, 5 -&gt; Community bld menu
+    var bldMenuState = 0;
+
+    public function new() { ~ }
+
+    function init() {
+        ~
+        Event.add(&quot;menu_btn&quot;, function(){
+            if (menuState == 0){
+                maincanvas.getElement(&quot;menu_empty&quot;).visible = true;
+                menuState = 1;
+                // Close/reset bld menu
+                bldMenuState = 0;
+            }else if (menuState == 1){ ~ }
+        });
+
+        //Check bldMenuState and set bldMenuState to corresponding building.
+        Event.add(&quot;house_btn&quot;, function(){ bldMenuBtn = 3; bldMenuState == 3 ? bldMenuState = 0 : bldMenuState = 3;});
+        Event.add(&quot;factory_btn&quot;, function(){ bldMenuBtn = 4; bldMenuState == 4 ? bldMenuState = 0 : bldMenuState = 4;});
+        Event.add(&quot;community_btn&quot;, function(){ bldMenuBtn = 5; bldMenuState == 5 ? bldMenuState = 0 : bldMenuState = 5;});
+
+        //Check when bld_menu_btn_n, and spawn building corresponding to category and type
+        Event.add(&quot;bld_menu_btn_1&quot;, function(){
+            switch (bldMenuState){
+                case 3: bld.spawnBuilding(1);
+                case 4: bld.spawnBuilding(5);
+                case 5: bld.spawnBuilding(2);
+            }
+        });
+        Event.add(&quot;bld_menu_btn_2&quot;, function(){
+            switch (bldMenuState){
+                case 4: bld.spawnBuilding(6);
+                case 5: bld.spawnBuilding(3);
+            }
+        });
+        Event.add(&quot;bld_menu_btn_3&quot;, function(){
+            switch (bldMenuState){
+                case 4: bld.spawnBuilding(7);
+                case 5: bld.spawnBuilding(4);
+            }
+        });
+        Event.add(&quot;bld_menu_btn_4&quot;, function(){
+            switch (bldMenuState){
+                case 4: bld.spawnBuilding(8);
+            }
+        });
+    }
+
+    function updateCanvas() {
+        updatePB();
+        updateAmount();
+
+        //Check if bldMenuBtn and set text and visibility according to it.
+        if(bldMenuState == 3 || bldMenuState == 4 || bldMenuState == 5){
+            maincanvas.getElement(&quot;bld_menu_text&quot;).text = getCategoryFromInt(bldMenuBtn);
+            maincanvas.getElement(&quot;bld_menu&quot;).visible = true;
+        }
+        if (bldMenuState == 0 || menuState == 0){
+            maincanvas.getElement(&quot;bld_menu&quot;).visible = false;
+        }
+
+        //Switch between bldMenuBtn and set button's text and visibility.
+        switch (bldMenuState){
+            case 3:
+                maincanvas.getElement(&quot;bld_menu_btn_1&quot;).text =  &quot;House&quot;;
+                maincanvas.getElement(&quot;bld_menu_btn_1&quot;).visible = true;
+                maincanvas.getElement(&quot;bld_menu_btn_2&quot;).visible = false;
+                maincanvas.getElement(&quot;bld_menu_btn_3&quot;).visible = false;
+                maincanvas.getElement(&quot;bld_menu_btn_4&quot;).visible = false;
+            case 4:
+                maincanvas.getElement(&quot;bld_menu_btn_1&quot;).text =  &quot;Sawmill&quot;;
+                maincanvas.getElement(&quot;bld_menu_btn_1&quot;).visible = true;
+                maincanvas.getElement(&quot;bld_menu_btn_2&quot;).text =  &quot;Quarry&quot;;
+                maincanvas.getElement(&quot;bld_menu_btn_2&quot;).visible = true;
+                maincanvas.getElement(&quot;bld_menu_btn_3&quot;).text =  &quot;Steelworks&quot;;
+                maincanvas.getElement(&quot;bld_menu_btn_3&quot;).visible = true;
+                maincanvas.getElement(&quot;bld_menu_btn_4&quot;).text =  &quot;Powerplant&quot;;
+                maincanvas.getElement(&quot;bld_menu_btn_4&quot;).visible = true;
+            case 5:
+                maincanvas.getElement(&quot;bld_menu_btn_1&quot;).text =  &quot;Park&quot;;
+                maincanvas.getElement(&quot;bld_menu_btn_1&quot;).visible = true;
+                maincanvas.getElement(&quot;bld_menu_btn_2&quot;).text =  &quot;Garden&quot;;
+                maincanvas.getElement(&quot;bld_menu_btn_2&quot;).visible = true;
+                maincanvas.getElement(&quot;bld_menu_btn_3&quot;).text =  &quot;Sport.C.&quot;;
+                maincanvas.getElement(&quot;bld_menu_btn_3&quot;).visible = true;
+                maincanvas.getElement(&quot;bld_menu_btn_4&quot;).visible = false;
+        }
+    }
+
+    function updatePB() { ~ }
+    function updateAmount() { ~ }
+
+    //Get building category from int
+    static function getCategoryFromInt(int: Int):String {
+        var type = &quot;&quot;;
+        switch (int){
+            case 3: type = &quot;House&quot;;
+            case 4: type = &quot;Factory&quot;;
+            case 5: type = &quot;Community&quot;;
+        }
+        return type;
+    }
+}
+
+</code></pre>
+<hr />
+<details>
+    <summary>Code Explanation</summary>
+<ol>
+<li>In <code>menu_btn</code> event, We will first check if menu is opened, if so than we close/reset building menu.</li>
+<li>In <code>&lt;category&gt;_btn</code> event, We will first set <code>bldMenuBtn</code> to its corresponding. We will than check if <code>bldMenuState</code> is same as corresponding button, if so then we set <code>bldMenuState</code> to 0 or else set <code>bldMenuState</code> to it corresponding button.</li>
+<li>In <code>updateCanvas()</code>, we will switch between <code>bldMenuState</code> and set buttons text and visibility according to it.</li>
+<li>In <code>updateCanvas()</code>, we will check if <code>bldMenuState</code> equals to any building category. If so, than set <code>bld_menu_text</code> text and set <code>bld_menu</code> visible</li>
+<li>In <code>updateCanvas()</code>, we will check if <code>bldMenuState</code> or <code>menuState</code> is closed. If so, than set <code>bld_menu</code> to invisible.</li>
+<li>In <code>getCategoryFromInt()</code>, we will switch between the int and then return corresponding text.</li>
+<li>In <code>bld_menu_btn_&lt;n&gt;</code> event, we will switch between <code>bldMenuState</code> and spawn building corresponding to category and type.</li>
+</ol>
+</details>
+<hr />
+<!-- tabs:end -->
+<hr />
+<p>Now, you should get like:</p>
+<p><img src="../../CBS_3_4.gif" alt="Some Image" /></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../GameDemo/CitySim/Resources.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../GameDemo/CitySim/FAQ.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../GameDemo/CitySim/Resources.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../GameDemo/CitySim/FAQ.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

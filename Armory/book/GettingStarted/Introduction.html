@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js dark">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Introduction - BG-36's Tutorials | Armory</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The example book covers examples.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "dark";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('dark')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../a.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../GettingStarted/Introduction.html" class="active"><strong aria-hidden="true">1.1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../GettingStarted/Setup.html"><strong aria-hidden="true">1.2.</strong> Setup</a></li><li class="chapter-item expanded "><a href="../GettingStarted/PitAndMis.html"><strong aria-hidden="true">1.3.</strong> Pitfall and Misconception</a></li></ol></li><li class="chapter-item expanded "><a href="../a.html"><strong aria-hidden="true">2.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Basics/Canvas.html"><strong aria-hidden="true">2.1.</strong> Canvas</a></li><li class="chapter-item expanded "><a href="../Basics/Navmesh.html"><strong aria-hidden="true">2.2.</strong> Navmesh</a></li><li class="chapter-item expanded "><a href="../Basics/Tilesheet.html"><strong aria-hidden="true">2.3.</strong> Tilesheet</a></li><li class="chapter-item expanded "><a href="../Basics/Trait.html"><strong aria-hidden="true">2.4.</strong> Trait</a></li></ol></li><li class="chapter-item expanded "><a href="../a.html"><strong aria-hidden="true">3.</strong> Mechanism</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Mechanism/SaveLoad/Introduction.html"><strong aria-hidden="true">3.1.</strong> Save and Load Mechanism</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Mechanism/SaveLoad/SL-1.html"><strong aria-hidden="true">3.1.1.</strong> Read/Write file</a></li><li class="chapter-item expanded "><a href="../Mechanism/SaveLoad/SL-2.html"><strong aria-hidden="true">3.1.2.</strong> Save/Load game file</a></li><li class="chapter-item expanded "><a href="../Mechanism/SaveLoad/SL-3.html"><strong aria-hidden="true">3.1.3.</strong> UI</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../a.html"><strong aria-hidden="true">4.</strong> Game Demo</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../GameDemo/CitySim/Introduction.html"><strong aria-hidden="true">4.1.</strong> City Sim</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../GameDemo/CitySim/Basics.html"><strong aria-hidden="true">4.1.1.</strong> Basics</a></li><li class="chapter-item expanded "><a href="../GameDemo/CitySim/Resources.html"><strong aria-hidden="true">4.1.2.</strong> Resources</a></li><li class="chapter-item expanded "><a href="../GameDemo/CitySim/UI.html"><strong aria-hidden="true">4.1.3.</strong> UI</a></li><li class="chapter-item expanded "><a href="../GameDemo/CitySim/FAQ.html"><strong aria-hidden="true">4.1.4.</strong> FAQ</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../HowToRead.html">How-to read</a></li><li class="chapter-item expanded affix "><a href="../FAQ.html">FAQ</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="dark">Dark (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">BG-36's Tutorials | Armory</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        <a href="https://github.com/BlackGoku36/BG36-tutorials/tree/master" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
+<hr />
+<h2><a class="header" href="#armory3d" id="armory3d">ARMORY3D</a></h2>
+<p>Armory3D is <a href="https://en.wikipedia.org/wiki/Data-driven_programming">data-driven</a> 3D engine written in <a href="https://en.wikipedia.org/wiki/Haxe"><code>Haxe</code></a>, <a href="https://en.wikipedia.org/wiki/C_(programming_language)"><code>C</code></a> and <a href="https://en.wikipedia.org/wiki/WebAssembly"><code>WebAssembly</code></a>, comes with Blender embedding but is designed to be able to be integrated into almost any 3d modelling and animation tool like <a href="https://en.wikipedia.org/wiki/Blender_(software)">Blender</a>. It's main focus is on performance, portability and minimal footprint.</p>
+<h3><a class="header" href="#rendering" id="rendering">RENDERING</a></h3>
+<p>Armory has it own renderer (see Iron). Armory uses Cycles/EEVEE material nodes to build <a href="https://en.wikipedia.org/wiki/Shader">shaders</a>. The <a href="https://en.wikipedia.org/wiki/Graphics_pipeline">renderpath</a> is completely scriptable, with support of forward and deferred renderpath out-of-box. It is completely possible to write your own shaders(in <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language">glsl</a>).</p>
+<h3><a class="header" href="#scripting" id="scripting">SCRIPTING</a></h3>
+<p>Scripting is done with <code>traits</code>(a concept developed in <code>Iron</code>: <em>a piece of logic attached to an object</em>).</p>
+<p>There are 4 different <code>Traits</code>:</p>
+<ol>
+<li><strong>LOGIC NODES TRAIT</strong>: Traits can be written with <code>Logic Node</code>(similar to UE4's Blueprints)</li>
+<li><strong>HAXE TRAIT</strong>: Traits can be written in <code>Haxe</code>.</li>
+<li><strong>CANVAS TRAIT</strong>: Trait for <code>Canvas UI</code></li>
+<li><strong>WEBASSEMBLY(WASM) TRAIT</strong>: Trait written in WebAssembly, <code>Rust</code>/<code>C</code>/<code>C++</code> can be used to write logic in after compiling it to WASM.</li>
+</ol>
+<h3><a class="header" href="#targets" id="targets">TARGETS</a></h3>
+<p>Armory support all targets that Kha support. Platform such as <code>Desktop(MacOS, Linux, Windows)</code>, <code>HTML5</code>, <code>Mobile(Android, iOS)</code> and <code>consoles(PS4, Xbox One, Switch)</code> is supported out-of-box.</p>
+<hr />
+<h2><a class="header" href="#technologies" id="technologies">Technologies</a></h2>
+<h3><a class="header" href="#haxe" id="haxe">HAXE</a></h3>
+<p><a href="https://haxe.org/"><strong>HAXE</strong></a> is open source cross-platform toolkit based on modern, high-level, strictly typed, multi-paradigm programming language and cross-compiler that can compile code to target platform native source code or binary. Haxe is easy-to-learn if you know java/AS3 and other OOP languages.</p>
+<p>(So basically, Haxe will cross-compile you code to many different language such as Python, C++, Java, Lua, etc., and then you run/compile this cross-compiled code. It is useful if you want to create cross-platform app/games. So, many birds with one stone.)</p>
+<h3><a class="header" href="#kha" id="kha">KHA</a></h3>
+<p><a href="http://kha.tech/"><strong>KHA</strong></a> is ultra-portable, high performance, open-source multimedia framework. It is low level SDK for building cross-platform games and media applications. With the help of Haxe Programming language and the <a href="https://github.com/Kode/krafix">Krafix shader-compiler</a> it can cross-compile your code and optimize your assets. Kha gives you a common API to graphics, audio, input, and networking, for platforms such as Web, Mobile, Desktop, Consoles, <a href="https://github.com/Kode/Kha/wiki/Features#supported-platforms">etc</a> and Graphics APIs such as Metal, Vulkan, DirectX, WebGL and OpenGL.</p>
+<p>(So basically, Kha is SDL on steroid which you can use to create Engines/Games/Apps, it will use platform native Graphics API, in order to maximum utilise GPU, resulting in fast, light-weight product)</p>
+<h3><a class="header" href="#iron" id="iron">IRON</a></h3>
+<p><a href="https://github.com/armory3d/iron"><strong>IRON</strong></a> is data-based, asynchronous engine used for building 3D tools, It is built with Kha, Haxe and WebAssembly. It is core engine of Armory but is designed to run stand-alone. Iron handles render &amp; content pipelines and lets you develop a custom visual engine on top of it.</p>
+<p>(So basically, Iron is an engine, you can use it with other libs such as <a href="https://pybullet.org/wordpress/">Bullet</a> for your need.)</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../a.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../GettingStarted/Setup.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../a.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../GettingStarted/Setup.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

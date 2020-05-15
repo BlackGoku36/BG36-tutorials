@@ -1,0 +1,14 @@
+[book]
+authors = ["BlackGoku36"]
+language = "en"
+multilingual = false
+src = "src"
+title = "BG-36's Tutorials | Armory"
+google-analytics = "UA-145916081-1"
+description = "The example book covers examples."
+
+[output.html]
+theme = "src/theme"
+default-theme = "dark"
+git-repository-url = "https://github.com/BlackGoku36/BG36-tutorials/tree/master"
+git-repository-icon = "fa-github"
