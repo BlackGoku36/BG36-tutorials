@@ -1,8 +1,6 @@
 # Part-2
 
-In this third and the last part we will add UI to our game for gamey effect.
-
-Create a new scene Canvas trait(`SaveLoad`) and add following elements and set their event as 'save_btn' and 'load_btn':
+Using keyboard to save and load game doesn't make sense, so we will add some buttons to do the work instead. Create a new scene Canvas trait `SaveLoad`  and add following elements and set their event as 'save_btn' and 'load_btn':
 
 ![**Some Image**](../../save_load_12.png)
 
@@ -10,7 +8,7 @@ and if you play it, you should get something like this:
 
 ![**Some Image**](../../save_load_13.png)
 
-Now to button functionality, we will implement it in `SaveLoadMechanism.hx`
+Now to make button click, open `SaveLoadMechanism.hx`.
 
 ```haxe
 // In SaveLoadMechanism.hx

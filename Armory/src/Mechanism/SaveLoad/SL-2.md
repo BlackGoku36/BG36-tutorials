@@ -1,8 +1,6 @@
 # Part-2
 
-In this second part, we will write and read cube's Location and rotation to/from the `save_game.json` in bundled. At the end of this part you should be able to get saving/loading working.
-
-Select our default cube and create another Haxe trait(`CubeController`). We will make it move on X-Y axis and then make it rotate randomly so, that we can demonstrate saving/loading mechanism.
+We can read and write from/to file. And now we will read and write our lovely default cube's properties, let just create a trait `CubeController` to simply rotate and move cube to demonstrate saving and loading.
 
 ```haxe
 // In CubeController.hx
@@ -34,9 +32,7 @@ This should give you following result:
 
 <iframe width="480" height="360" src="https://blackgoku36.github.io/armory-tutorials/Armory/src/save_load_8.mp4" frameborder="0"> </iframe>
 
-Now to adding cube location and rotation to save_game.json for saving and loading.
-
-Go back to `SaveLoadMechanism.hx`, we will get cube's location and rotation and add it to json structure.
+We use `typedef` structure to have it hold some of the cube's properties, and use this structure to save/load to json.
 
 ```haxe
 // In SaveLoadMechanism.hx
@@ -48,7 +44,7 @@ import iron.math.Vec4;
 import iron.system.Input;
 import iron.data.Data;
 
-//Define Anonymous Structure (kind of like 'enums' for other languages) with Vec4 location and rotation.
+//Define Anonymous Structure with Vec4 location and rotation.
 typedef Cube = { loc : Vec4, rot : Vec4 }
 
 class SaveLoadMechanism extends iron.Trait {
@@ -79,11 +75,13 @@ class SaveLoadMechanism extends iron.Trait {
         #if kha_krom
         //Set cube's loc and rot to anonymous structure defined above.
         var saveData: Cube = {loc: cubeLoc, rot: cubeRot};
+        // Convert saveData to string.
         var saveDataJSON = haxe.Json.stringify(saveData);
 
         var path = Krom.getFilesLocation() + "/../../../" + "/Bundled/save_game.json";
+        // Get bytes of string
         var bytes = haxe.io.Bytes.ofString(saveDataJSON);
-
+        // Save bytes's data to file
         Krom.fileSaveBytes(path, bytes.getData());
         trace("Saved!");
         #end
@@ -91,6 +89,7 @@ class SaveLoadMechanism extends iron.Trait {
 
     public function load() {
         var cube = Scene.active.getChild("Cube");
+        // Loads blob from `Bundled` folder
         Data.getBlob(saveFile, function(b:kha.Blob) {
 
             var string = b.toString();
@@ -106,8 +105,6 @@ class SaveLoadMechanism extends iron.Trait {
 }
 ```
 
-We can now save/load our cube location and rotation by parsing/writing to json with key press.
-
 <blockquote style="border-color: #FF9E1F;">
     <p>
     For now, we will have to reopen the game to let game parse newly overwritten game_save.json.
@@ -118,6 +115,4 @@ You should get this as result:
 
 <iframe width="480" height="360" src="https://blackgoku36.github.io/armory-tutorials/Armory/src/save_load_9.mp4" frameborder="0"> </iframe>
 
-If it work for you, then congrats! Part-II finishes!
-
-In last part(aka Part-III) we will finalize it by adding UI
+If it work for you, then congrats! 🎉

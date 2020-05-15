@@ -1,10 +1,8 @@
 # Part-1
 
-First we will implement basics of file reading and writing for krom in-game. At the end of this part you should be able to save/load json from `Bundled` folder, when in-game.
+We will implement basics of file reading and writing for `Krom` platform. For now, create `Bundled` folder in root directory, Armory uses this folder to store and read files such as canvas's json.
 
-We will first set-up the saving mechanism for hard-coded value.
-
-1. Create a Haxe trait `SaveLoadMechanism`, we will use this for handling our save and load mechanism.
+1. Create a Haxe trait `SaveLoadMechanism`, we will put everything here.
 
 <!-- tabs:start -->
 
@@ -52,9 +50,7 @@ class SaveLoadMechanism extends iron.Trait {
 ---
 <!-- tabs:end -->
 
-Now, if you play the game and go over to `root_folder/build_file/debug/krom/` you should find `save_game.json` and on opening it should read `{"text":"Hello World!"}`, if you do, then Congratulation! You did it!
-
-Let save `save_game.json` to proper place and add some keyboard input code to handle saving manually instead of saving when the game initiate.
+If you play and open `root_folder/build_file/debug/krom/` you should find `save_game.json` and it should have your saved content. To save it to `Bundled` folder that we previously create and to add keyboard input code to save manually instead of saving when the game initiate.
 
 <!-- tabs:start -->
 
@@ -81,7 +77,7 @@ class SaveLoadMechanism extends iron.Trait {
     public function save(){
         ~
         var saveDataJSON = haxe.Json.stringify(saveData);
-        //Move out of 3 dirs
+        // Move out of 3 dirs
         var path = Krom.getFilesLocation() + "/../../../" + "/Bundled/save_game.json";
         var bytes = haxe.io.Bytes.ofString(saveDataJSON);
         ~
@@ -94,7 +90,7 @@ class SaveLoadMechanism extends iron.Trait {
 <details>
     <summary>Code Explanation</summary>
 
-1. On every frame, check if key `f` is pressed, than call `save()`
+1. On every tick, check if key `f` is pressed, than call `save()`
 2. We add `/../../../` before path to move out of three directory.
 </details>
 
@@ -103,15 +99,7 @@ class SaveLoadMechanism extends iron.Trait {
 
 ![**Some Image**](../../save_load_4.png)
 
-<blockquote style="border-color: #FF9E1F;">
-    <p>
-    Don't forget to create Bundled folder in your root directory!
-    </p>
-</blockquote>
-
-We will now add reading functionality, we will read `save_game.json` from `Bundled` folder and print `text` value in debug console.
-
-Now let get to code:
+We need to read from file in order to load its contents.
 
 <!-- tabs:start -->
 
@@ -167,8 +155,6 @@ class SaveLoadMechanism extends iron.Trait {
 
 <!-- tabs:end -->
 
-Hit `Play`, try pressing `f` and then `g`, `Hello World!` should appear in debug console, if it do than that means saving and loading work perfectly!
+Hit `Play`, try pressing `f` and then `g`, `Hello World!` should appear in debug console, if it do than that means saving and loading works 👌
 
 ![**Some Image**](../../save_load_6.png)
-
-And that is for today! In next part we will make it save cube's Location and Rotation.

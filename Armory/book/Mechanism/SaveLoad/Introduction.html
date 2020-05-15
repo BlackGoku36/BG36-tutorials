@@ -153,16 +153,15 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
-<p>Save/load is one of the most important feature in game, whether it is single-player or multi-player game. In case of single-player, the game data can be saved to local drive, with encryption so that cheating is not made easy. On other hand, in multi-players game, game data is saved to server hosted by the game development group.</p>
-<p>Ever wondered how this is generally done? Well, Saving and loading mechanism can be done by simply writing data into file and reading from it. <a href="https://en.wikipedia.org/wiki/JSON">Json</a> and <a href="https://en.wikipedia.org/wiki/XML">Xml</a> file formats are popularly used for this purpose for small game, but you can write your own format <em>(structure, parser, encryption, etc)</em> if you are into writing your own stuffs. <em>(we are talking about small game that you share with friend, for fun and nothing serious, writing save/load mechanism for AAA games involves lot of other things)</em>.</p>
-<p>We will be creating save/load game mechanism in <code>Armory3D</code>. For simplicity sake, we will be using <code>Json</code> to store in our game data and not use any sort of encrytion <em>(this kind of stuffs are left for you as 'DIY')</em>.</p>
+<p>Save/load is one of the most important feature in game, whether it is single-player or multi-player game. In case of single-player, the game data can be saved to local drive, with encryption so that cheating is not made easy. On other hand, in multi-players game, game data is saved on the server hosted by the game development group.</p>
+<p>Ever wondered how this is generally done? Well, Saving and loading mechanism can be done by simply writing data into file and reading from it. <a href="https://en.wikipedia.org/wiki/JSON">Json</a> and <a href="https://en.wikipedia.org/wiki/XML">Xml</a> file formats are popularly used for this purpose for small game. In commercial games, things such as file size, encryption, etc. need to be taken care of, but for this tutorial we will just be exporting and reading from json. I will leave other stuffs up to you.</p>
 <p>This tutorial is divided into 3 parts:</p>
 <ol>
-<li>Setup the mechanism, we will only look into writing and reading file in-game.</li>
-<li>Finally add saving and loading cube's Location and Rotation.</li>
-<li>Close this tutorial by adding UI for saving and loading for more gamey experience.</li>
+<li>We will look into writing and reading file in-game.</li>
+<li>Add saving and loading cube's properties.</li>
+<li>UI for saving and loading the game.</li>
 </ol>
-<p>At the end of this tutorial you should be at-least be able to save data into <code>json</code>, read from it and control it with UI. And you should get something like this:</p>
+<p>At the end, we get:</p>
 <iframe width="640" height="480" src="https://blackgoku36.github.io/armory-tutorials/Armory/src/save_load_final.mp4" frameborder="0" allowfullscreen> </iframe>
 <p>If anything goes wrong, then you can check the <a href="https://github.com/BlackGoku36/armory-tutorial-download/tree/master/SaveLoadMechanism">source code</a></p>
 

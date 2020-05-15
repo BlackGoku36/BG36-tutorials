@@ -153,10 +153,9 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#part-1" id="part-1">Part-1</a></h1>
-<p>First we will implement basics of file reading and writing for krom in-game. At the end of this part you should be able to save/load json from <code>Bundled</code> folder, when in-game.</p>
-<p>We will first set-up the saving mechanism for hard-coded value.</p>
+<p>We will implement basics of file reading and writing for <code>Krom</code> platform. For now, create <code>Bundled</code> folder in root directory, Armory uses this folder to store and read files such as canvas's json.</p>
 <ol>
-<li>Create a Haxe trait <code>SaveLoadMechanism</code>, we will use this for handling our save and load mechanism.</li>
+<li>Create a Haxe trait <code>SaveLoadMechanism</code>, we will put everything here.</li>
 </ol>
 <!-- tabs:start -->
 <h4><a class="header" href="#saveloadmechanismhx" id="saveloadmechanismhx"><strong>SaveLoadMechanism.hx</strong></a></h4>
@@ -199,8 +198,7 @@ class SaveLoadMechanism extends iron.Trait {
 </details>
 <hr />
 <!-- tabs:end -->
-<p>Now, if you play the game and go over to <code>root_folder/build_file/debug/krom/</code> you should find <code>save_game.json</code> and on opening it should read <code>{&quot;text&quot;:&quot;Hello World!&quot;}</code>, if you do, then Congratulation! You did it!</p>
-<p>Let save <code>save_game.json</code> to proper place and add some keyboard input code to handle saving manually instead of saving when the game initiate.</p>
+<p>If you play and open <code>root_folder/build_file/debug/krom/</code> you should find <code>save_game.json</code> and it should have your saved content. To save it to <code>Bundled</code> folder that we previously create and to add keyboard input code to save manually instead of saving when the game initiate.</p>
 <!-- tabs:start -->
 <h4><a class="header" href="#saveloadmechanismhx-1" id="saveloadmechanismhx-1"><strong>SaveLoadMechanism.hx</strong></a></h4>
 <pre><code class="language-haxe">package arm;
@@ -223,7 +221,7 @@ class SaveLoadMechanism extends iron.Trait {
     public function save(){
         ~
         var saveDataJSON = haxe.Json.stringify(saveData);
-        //Move out of 3 dirs
+        // Move out of 3 dirs
         var path = Krom.getFilesLocation() + &quot;/../../../&quot; + &quot;/Bundled/save_game.json&quot;;
         var bytes = haxe.io.Bytes.ofString(saveDataJSON);
         ~
@@ -235,20 +233,14 @@ class SaveLoadMechanism extends iron.Trait {
 <details>
     <summary>Code Explanation</summary>
 <ol>
-<li>On every frame, check if key <code>f</code> is pressed, than call <code>save()</code></li>
+<li>On every tick, check if key <code>f</code> is pressed, than call <code>save()</code></li>
 <li>We add <code>/../../../</code> before path to move out of three directory.</li>
 </ol>
 </details>
 <hr />
 <!-- tabs:end -->
 <p><img src="../../save_load_4.png" alt="Some Image" /></p>
-<blockquote style="border-color: #FF9E1F;">
-    <p>
-    Don't forget to create Bundled folder in your root directory!
-    </p>
-</blockquote>
-<p>We will now add reading functionality, we will read <code>save_game.json</code> from <code>Bundled</code> folder and print <code>text</code> value in debug console.</p>
-<p>Now let get to code:</p>
+<p>We need to read from file in order to load its contents.</p>
 <!-- tabs:start -->
 <h4><a class="header" href="#saveloadmechanism" id="saveloadmechanism"><strong>SaveLoadMechanism</strong></a></h4>
 <pre><code class="language-haxe">package arm;
@@ -297,9 +289,8 @@ class SaveLoadMechanism extends iron.Trait {
 </details>
 <hr />
 <!-- tabs:end -->
-<p>Hit <code>Play</code>, try pressing <code>f</code> and then <code>g</code>, <code>Hello World!</code> should appear in debug console, if it do than that means saving and loading work perfectly!</p>
+<p>Hit <code>Play</code>, try pressing <code>f</code> and then <code>g</code>, <code>Hello World!</code> should appear in debug console, if it do than that means saving and loading works 👌</p>
 <p><img src="../../save_load_6.png" alt="Some Image" /></p>
-<p>And that is for today! In next part we will make it save cube's Location and Rotation.</p>
 
                     </main>
 

@@ -153,12 +153,11 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#part-2" id="part-2">Part-2</a></h1>
-<p>In this third and the last part we will add UI to our game for gamey effect.</p>
-<p>Create a new scene Canvas trait(<code>SaveLoad</code>) and add following elements and set their event as 'save_btn' and 'load_btn':</p>
+<p>Using keyboard to save and load game doesn't make sense, so we will add some buttons to do the work instead. Create a new scene Canvas trait <code>SaveLoad</code>  and add following elements and set their event as 'save_btn' and 'load_btn':</p>
 <p><img src="../../save_load_12.png" alt="Some Image" /></p>
 <p>and if you play it, you should get something like this:</p>
 <p><img src="../../save_load_13.png" alt="Some Image" /></p>
-<p>Now to button functionality, we will implement it in <code>SaveLoadMechanism.hx</code></p>
+<p>Now to make button click, open <code>SaveLoadMechanism.hx</code>.</p>
 <pre><code class="language-haxe">// In SaveLoadMechanism.hx
 package arm;
 

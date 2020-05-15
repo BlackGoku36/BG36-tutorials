@@ -634,23 +634,21 @@ pub extern &quot;C&quot; fn main() -&gt; i32 {
 <p>If anything goes wrong, then you can check the <a href="https://github.com/BlackGoku36/armory-tutorial-sourcecode/tree/master/Traits">source code</a></p>
 <h1><a class="header" href="#getting-started-2" id="getting-started-2">Getting Started</a></h1>
 <h1><a class="header" href="#introduction-1" id="introduction-1">Introduction</a></h1>
-<p>Save/load is one of the most important feature in game, whether it is single-player or multi-player game. In case of single-player, the game data can be saved to local drive, with encryption so that cheating is not made easy. On other hand, in multi-players game, game data is saved to server hosted by the game development group.</p>
-<p>Ever wondered how this is generally done? Well, Saving and loading mechanism can be done by simply writing data into file and reading from it. <a href="https://en.wikipedia.org/wiki/JSON">Json</a> and <a href="https://en.wikipedia.org/wiki/XML">Xml</a> file formats are popularly used for this purpose for small game, but you can write your own format <em>(structure, parser, encryption, etc)</em> if you are into writing your own stuffs. <em>(we are talking about small game that you share with friend, for fun and nothing serious, writing save/load mechanism for AAA games involves lot of other things)</em>.</p>
-<p>We will be creating save/load game mechanism in <code>Armory3D</code>. For simplicity sake, we will be using <code>Json</code> to store in our game data and not use any sort of encrytion <em>(this kind of stuffs are left for you as 'DIY')</em>.</p>
+<p>Save/load is one of the most important feature in game, whether it is single-player or multi-player game. In case of single-player, the game data can be saved to local drive, with encryption so that cheating is not made easy. On other hand, in multi-players game, game data is saved on the server hosted by the game development group.</p>
+<p>Ever wondered how this is generally done? Well, Saving and loading mechanism can be done by simply writing data into file and reading from it. <a href="https://en.wikipedia.org/wiki/JSON">Json</a> and <a href="https://en.wikipedia.org/wiki/XML">Xml</a> file formats are popularly used for this purpose for small game. In commercial games, things such as file size, encryption, etc. need to be taken care of, but for this tutorial we will just be exporting and reading from json. I will leave other stuffs up to you.</p>
 <p>This tutorial is divided into 3 parts:</p>
 <ol>
-<li>Setup the mechanism, we will only look into writing and reading file in-game.</li>
-<li>Finally add saving and loading cube's Location and Rotation.</li>
-<li>Close this tutorial by adding UI for saving and loading for more gamey experience.</li>
+<li>We will look into writing and reading file in-game.</li>
+<li>Add saving and loading cube's properties.</li>
+<li>UI for saving and loading the game.</li>
 </ol>
-<p>At the end of this tutorial you should be at-least be able to save data into <code>json</code>, read from it and control it with UI. And you should get something like this:</p>
+<p>At the end, we get:</p>
 <iframe width="640" height="480" src="https://blackgoku36.github.io/armory-tutorials/Armory/src/save_load_final.mp4" frameborder="0" allowfullscreen> </iframe>
 <p>If anything goes wrong, then you can check the <a href="https://github.com/BlackGoku36/armory-tutorial-download/tree/master/SaveLoadMechanism">source code</a></p>
 <h1><a class="header" href="#part-1" id="part-1">Part-1</a></h1>
-<p>First we will implement basics of file reading and writing for krom in-game. At the end of this part you should be able to save/load json from <code>Bundled</code> folder, when in-game.</p>
-<p>We will first set-up the saving mechanism for hard-coded value.</p>
+<p>We will implement basics of file reading and writing for <code>Krom</code> platform. For now, create <code>Bundled</code> folder in root directory, Armory uses this folder to store and read files such as canvas's json.</p>
 <ol>
-<li>Create a Haxe trait <code>SaveLoadMechanism</code>, we will use this for handling our save and load mechanism.</li>
+<li>Create a Haxe trait <code>SaveLoadMechanism</code>, we will put everything here.</li>
 </ol>
 <!-- tabs:start -->
 <h4><a class="header" href="#saveloadmechanismhx" id="saveloadmechanismhx"><strong>SaveLoadMechanism.hx</strong></a></h4>
@@ -693,8 +691,7 @@ class SaveLoadMechanism extends iron.Trait {
 </details>
 <hr />
 <!-- tabs:end -->
-<p>Now, if you play the game and go over to <code>root_folder/build_file/debug/krom/</code> you should find <code>save_game.json</code> and on opening it should read <code>{&quot;text&quot;:&quot;Hello World!&quot;}</code>, if you do, then Congratulation! You did it!</p>
-<p>Let save <code>save_game.json</code> to proper place and add some keyboard input code to handle saving manually instead of saving when the game initiate.</p>
+<p>If you play and open <code>root_folder/build_file/debug/krom/</code> you should find <code>save_game.json</code> and it should have your saved content. To save it to <code>Bundled</code> folder that we previously create and to add keyboard input code to save manually instead of saving when the game initiate.</p>
 <!-- tabs:start -->
 <h4><a class="header" href="#saveloadmechanismhx-1" id="saveloadmechanismhx-1"><strong>SaveLoadMechanism.hx</strong></a></h4>
 <pre><code class="language-haxe">package arm;
@@ -717,7 +714,7 @@ class SaveLoadMechanism extends iron.Trait {
     public function save(){
         ~
         var saveDataJSON = haxe.Json.stringify(saveData);
-        //Move out of 3 dirs
+        // Move out of 3 dirs
         var path = Krom.getFilesLocation() + &quot;/../../../&quot; + &quot;/Bundled/save_game.json&quot;;
         var bytes = haxe.io.Bytes.ofString(saveDataJSON);
         ~
@@ -729,20 +726,14 @@ class SaveLoadMechanism extends iron.Trait {
 <details>
     <summary>Code Explanation</summary>
 <ol>
-<li>On every frame, check if key <code>f</code> is pressed, than call <code>save()</code></li>
+<li>On every tick, check if key <code>f</code> is pressed, than call <code>save()</code></li>
 <li>We add <code>/../../../</code> before path to move out of three directory.</li>
 </ol>
 </details>
 <hr />
 <!-- tabs:end -->
 <p><img src="Mechanism/SaveLoad/../../save_load_4.png" alt="Some Image" /></p>
-<blockquote style="border-color: #FF9E1F;">
-    <p>
-    Don't forget to create Bundled folder in your root directory!
-    </p>
-</blockquote>
-<p>We will now add reading functionality, we will read <code>save_game.json</code> from <code>Bundled</code> folder and print <code>text</code> value in debug console.</p>
-<p>Now let get to code:</p>
+<p>We need to read from file in order to load its contents.</p>
 <!-- tabs:start -->
 <h4><a class="header" href="#saveloadmechanism" id="saveloadmechanism"><strong>SaveLoadMechanism</strong></a></h4>
 <pre><code class="language-haxe">package arm;
@@ -791,12 +782,10 @@ class SaveLoadMechanism extends iron.Trait {
 </details>
 <hr />
 <!-- tabs:end -->
-<p>Hit <code>Play</code>, try pressing <code>f</code> and then <code>g</code>, <code>Hello World!</code> should appear in debug console, if it do than that means saving and loading work perfectly!</p>
+<p>Hit <code>Play</code>, try pressing <code>f</code> and then <code>g</code>, <code>Hello World!</code> should appear in debug console, if it do than that means saving and loading works 👌</p>
 <p><img src="Mechanism/SaveLoad/../../save_load_6.png" alt="Some Image" /></p>
-<p>And that is for today! In next part we will make it save cube's Location and Rotation.</p>
 <h1><a class="header" href="#part-2" id="part-2">Part-2</a></h1>
-<p>In this second part, we will write and read cube's Location and rotation to/from the <code>save_game.json</code> in bundled. At the end of this part you should be able to get saving/loading working.</p>
-<p>Select our default cube and create another Haxe trait(<code>CubeController</code>). We will make it move on X-Y axis and then make it rotate randomly so, that we can demonstrate saving/loading mechanism.</p>
+<p>We can read and write from/to file. And now we will read and write our lovely default cube's properties, let just create a trait <code>CubeController</code> to simply rotate and move cube to demonstrate saving and loading.</p>
 <pre><code class="language-haxe">// In CubeController.hx
 
 package arm;
@@ -823,8 +812,7 @@ class CubeController extends iron.Trait {
 </code></pre>
 <p>This should give you following result:</p>
 <iframe width="480" height="360" src="https://blackgoku36.github.io/armory-tutorials/Armory/src/save_load_8.mp4" frameborder="0"> </iframe>
-<p>Now to adding cube location and rotation to save_game.json for saving and loading.</p>
-<p>Go back to <code>SaveLoadMechanism.hx</code>, we will get cube's location and rotation and add it to json structure.</p>
+<p>We use <code>typedef</code> structure to have it hold some of the cube's properties, and use this structure to save/load to json.</p>
 <pre><code class="language-haxe">// In SaveLoadMechanism.hx
 
 package arm;
@@ -834,7 +822,7 @@ import iron.math.Vec4;
 import iron.system.Input;
 import iron.data.Data;
 
-//Define Anonymous Structure (kind of like 'enums' for other languages) with Vec4 location and rotation.
+//Define Anonymous Structure with Vec4 location and rotation.
 typedef Cube = { loc : Vec4, rot : Vec4 }
 
 class SaveLoadMechanism extends iron.Trait {
@@ -865,11 +853,13 @@ class SaveLoadMechanism extends iron.Trait {
         #if kha_krom
         //Set cube's loc and rot to anonymous structure defined above.
         var saveData: Cube = {loc: cubeLoc, rot: cubeRot};
+        // Convert saveData to string.
         var saveDataJSON = haxe.Json.stringify(saveData);
 
         var path = Krom.getFilesLocation() + &quot;/../../../&quot; + &quot;/Bundled/save_game.json&quot;;
+        // Get bytes of string
         var bytes = haxe.io.Bytes.ofString(saveDataJSON);
-
+        // Save bytes's data to file
         Krom.fileSaveBytes(path, bytes.getData());
         trace(&quot;Saved!&quot;);
         #end
@@ -877,6 +867,7 @@ class SaveLoadMechanism extends iron.Trait {
 
     public function load() {
         var cube = Scene.active.getChild(&quot;Cube&quot;);
+        // Loads blob from `Bundled` folder
         Data.getBlob(saveFile, function(b:kha.Blob) {
 
             var string = b.toString();
@@ -891,7 +882,6 @@ class SaveLoadMechanism extends iron.Trait {
     }
 }
 </code></pre>
-<p>We can now save/load our cube location and rotation by parsing/writing to json with key press.</p>
 <blockquote style="border-color: #FF9E1F;">
     <p>
     For now, we will have to reopen the game to let game parse newly overwritten game_save.json.
@@ -899,15 +889,13 @@ class SaveLoadMechanism extends iron.Trait {
 </blockquote>
 <p>You should get this as result:</p>
 <iframe width="480" height="360" src="https://blackgoku36.github.io/armory-tutorials/Armory/src/save_load_9.mp4" frameborder="0"> </iframe>
-<p>If it work for you, then congrats! Part-II finishes!</p>
-<p>In last part(aka Part-III) we will finalize it by adding UI</p>
+<p>If it work for you, then congrats! 🎉</p>
 <h1><a class="header" href="#part-2-1" id="part-2-1">Part-2</a></h1>
-<p>In this third and the last part we will add UI to our game for gamey effect.</p>
-<p>Create a new scene Canvas trait(<code>SaveLoad</code>) and add following elements and set their event as 'save_btn' and 'load_btn':</p>
+<p>Using keyboard to save and load game doesn't make sense, so we will add some buttons to do the work instead. Create a new scene Canvas trait <code>SaveLoad</code>  and add following elements and set their event as 'save_btn' and 'load_btn':</p>
 <p><img src="Mechanism/SaveLoad/../../save_load_12.png" alt="Some Image" /></p>
 <p>and if you play it, you should get something like this:</p>
 <p><img src="Mechanism/SaveLoad/../../save_load_13.png" alt="Some Image" /></p>
-<p>Now to button functionality, we will implement it in <code>SaveLoadMechanism.hx</code></p>
+<p>Now to make button click, open <code>SaveLoadMechanism.hx</code>.</p>
 <pre><code class="language-haxe">// In SaveLoadMechanism.hx
 package arm;
 
