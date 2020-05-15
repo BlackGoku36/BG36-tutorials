@@ -245,7 +245,7 @@ class HaxeScript extends iron.Trait {
 <li>Put outputed <code>main.wasm</code> in <code>Bundled</code> folder (create one, if there is no bundled folder).</li>
 <li>Go back to <code>Scene - Armory Scene Trait</code>, select previously created <code>Wasm</code> placeholder, click <code>Refresh</code> and select <code>main</code> in <code>Module</code> dropdown.</li>
 </ol>
-<pre><pre class="playpen"><code class="language-rust">// Rust example of rotating cube
+<pre><code class="language-rs">// Rust example of rotating cube
 // main.rs
 extern {
     fn notify_on_update(f: extern fn() -&gt; ()) -&gt; ();
@@ -271,7 +271,7 @@ pub extern &quot;C&quot; fn main() -&gt; i32 {
     }
     return 0;
 }
-</code></pre></pre>
+</code></pre>
 <p>Now if you play it then you should have spinny rusty wasm cube.</p>
 <h3><a class="header" href="#canvas" id="canvas">Canvas</a></h3>
 <ol>

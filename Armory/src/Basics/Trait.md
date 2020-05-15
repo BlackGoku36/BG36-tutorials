@@ -97,7 +97,7 @@ Create a cube, name it `Wasm` and place it wherever you want. Select it and go t
 4. Put outputed `main.wasm` in `Bundled` folder (create one, if there is no bundled folder).
 5. Go back to `Scene - Armory Scene Trait`, select previously created `Wasm` placeholder, click `Refresh` and select `main` in `Module` dropdown.
 
-```rust
+```rs
 // Rust example of rotating cube
 // main.rs
 extern {
