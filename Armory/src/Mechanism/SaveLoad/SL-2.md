@@ -30,7 +30,7 @@ class CubeController extends iron.Trait {
 
 This should give you following result:
 
-<iframe width="480" height="360" src="https://blackgoku36.github.io/armory-tutorials/Armory/src/save_load_8.mp4" frameborder="0"> </iframe>
+<iframe width="480" height="360" src="https://blackgoku36.github.io/BG36-tutorials/Armory/src/save_load_8.mp4" frameborder="0"> </iframe>
 
 We use `typedef` structure to have it hold some of the cube's properties, and use this structure to save/load to json.
 
@@ -113,6 +113,6 @@ class SaveLoadMechanism extends iron.Trait {
 
 You should get this as result:
 
-<iframe width="480" height="360" src="https://blackgoku36.github.io/armory-tutorials/Armory/src/save_load_9.mp4" frameborder="0"> </iframe>
+<iframe width="480" height="360" src="https://blackgoku36.github.io/BG36-tutorials/Armory/src/save_load_9.mp4" frameborder="0"> </iframe>
 
 If it work for you, then congrats! 🎉

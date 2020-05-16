@@ -7,7 +7,7 @@
 In this tutorial, we will create canvas using Armory2D, learn about it and then add and control canvas's element using `haxe`.
 
 Our Goal:
-<iframe width="640" height="480" src="https://blackgoku36.github.io/armory-tutorials/Armory/src/finalcanvas.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="480" src="https://blackgoku36.github.io/BG36-tutorials/Armory/src/finalcanvas.mp4" frameborder="0" allowfullscreen></iframe>
 
 ---
 Fire up Armory3D project, once you have it up, go to `Scene - Armory Scene Trait`, create new `Canvas Trait`, name it `UI` and hit `Edit Canvas`. A window named Armory2D should pop-up:

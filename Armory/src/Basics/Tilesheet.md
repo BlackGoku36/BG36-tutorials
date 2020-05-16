@@ -8,7 +8,7 @@ In this `tilesheet` video tutorial, Samuel Moxham (Smxham) will cover following:
 3. How to make explosion effect in Armory3D using `tilesheets`.
 4. Applying `tilesheets` in game scenario.
 
-<iframe width="640" height="480" src="https://blackgoku36.github.io/armory-tutorials/Armory/src/tilesheet_tutorial.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="480" src="https://blackgoku36.github.io/BG36-tutorials/Armory/src/tilesheet_tutorial.mp4" frameborder="0" allowfullscreen></iframe>
 
 [Youtube Link](https://www.youtube.com/watch?v=kFXqIprtF2Y)
 

@@ -10,6 +10,6 @@ This tutorial is divided into 3 parts:
 3. UI for saving and loading the game.
 
 At the end, we get:
-<iframe width="640" height="480" src="https://blackgoku36.github.io/armory-tutorials/Armory/src/save_load_final.mp4" frameborder="0" allowfullscreen> </iframe>
+<iframe width="640" height="480" src="https://blackgoku36.github.io/BG36-tutorials/Armory/src/save_load_final.mp4" frameborder="0" allowfullscreen> </iframe>
 
 If anything goes wrong, then you can check the [source code](https://github.com/BlackGoku36/armory-tutorial-download/tree/master/SaveLoadMechanism)

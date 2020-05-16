@@ -5,7 +5,7 @@
 In this tutorial, we will learn about what is Traits, what are different types, how to create them and rotate different cube from different traits.
 
 Goal:
-<iframe width="640" height="480" src="https://blackgoku36.github.io/armory-tutorials/Armory/src/trait_final.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="480" src="https://blackgoku36.github.io/BG36-tutorials/Armory/src/trait_final.mp4" frameborder="0" allowfullscreen></iframe>
 
 ---
 
