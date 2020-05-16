@@ -500,46 +500,33 @@ class CanvasController extends iron.Trait {
 <p>Tilesheet Samuel Moxham uses in his tutorial -&gt; <a href="https://github.com/BlackGoku36/armory-tutorial-sourcecode/blob/master/Tilesheet/ConcreteImpact.png">Conceret_Impact</a>, <a href="https://github.com/BlackGoku36/armory-tutorial-sourcecode/blob/master/Tilesheet/Explosion.png">Explosion</a></p>
 <hr />
 <p>If anything goes wrong, then you can check the <a href="https://github.com/BlackGoku36/armory-tutorial-download/tree/master/Tilesheet">source code</a></p>
-<h2><a class="header" href="#traits" id="traits">Traits</a></h2>
+<h1><a class="header" href="#traits" id="traits">Traits</a></h1>
 <hr />
-<p>In this tutorial, we will learn about what is Traits, what are different types, how to create them and rotate different cube from different traits.</p>
-<p>Goal:</p>
-<iframe width="640" height="480" src="https://blackgoku36.github.io/BG36-tutorials/Armory/src/trait_final.mp4" frameborder="0" allowfullscreen></iframe>
-<hr />
-<p><code>Trait</code> is conecpt in <code>Iron</code> means a piece of logic attached to object or scene.</p>
-<p>There are 4 different types of <code>traits</code>:</p>
+<p><code>Trait</code> is a concept in <code>Iron</code> which means a piece of logic code that is attached to object(s) or scene(s).</p>
+<p>There are 4 different types of traits:</p>
 <ol>
 <li>
-<p><strong>Haxe Trait</strong>: <a href="https://haxe.org/">Haxe</a> Text-based scripting trait that can be used to write game-play logic in.</p>
+<p><strong>Haxe Trait</strong>: <a href="https://haxe.org/">Haxe</a> text-based scripting trait that can be used to write game-play logic in.</p>
 </li>
 <li>
 <p><strong>Logic Nodes Trait</strong>: Visual scripting trait for writing game-play logic in. It is similar to <a href="https://docs.unrealengine.com/en-US/Engine/Blueprints/index.html">UE4's Blueprints</a>.</p>
 </li>
 <li>
-<p><strong>Canvas Trait</strong>: Trait for UI, canvas can be made using <a href="https://github.com/armory3d/armory2d">Armory2D</a>, but since it use <code>Json</code>, you can create layout yourself without <code>Armory2D</code>.</p>
+<p><strong>Canvas Trait</strong>: Trait for UI, it is <a href="https://github.com/armory3d/zui">Zui</a>'s canvas under the hood. And it uses <a href="https://github.com/armory3d/armory2d">Armory2D</a> as WYSIWYG editor.</p>
 </li>
 <li>
-<p><strong>WebAssembly(WASM)</strong>: <a href="https://webassembly.org/">WebAssembly</a> can also be used as scripting trait, It can be written in <a href="https://www.rust-lang.org/"><code>Rust</code></a>/<a href="https://en.wikipedia.org/wiki/C_%28programming_language%29"><code>C</code></a>/<a href="https://en.wikipedia.org/wiki/C%2B%2B"><code>C++</code></a> and than complied to <code>WASM</code> to use it in Armory <em>(WASM will only work with Krom target)</em>.
-WASM is very useful when it comes to plugins, you can use Libraries made in <code>Rust</code>/<code>C</code>/<code>C++</code> and compile it to WASM and then use it in <code>Armory</code> and <code>Kha</code>. Two examples that are used in <code>ArmorPaint</code>: <a href="https://twitter.com/luboslenco/status/1173942414966439938">Texture-synthesis(Rust)</a>, <a href="https://twitter.com/luboslenco/status/1172536139573538816">Chips(C)</a>.</p>
+<p><strong>WebAssembly (WASM)</strong>: <a href="https://webassembly.org/">WebAssembly</a> can also be used as scripting trait, It can be written in <a href="https://www.rust-lang.org/">Rust</a>/<a href="https://en.wikipedia.org/wiki/C_%28programming_language%29">C</a>/<a href="https://en.wikipedia.org/wiki/C%2B%2B">C++</a> and than complied to WASM to use it in Armory <em>(WASM will only work with Krom target)</em>.
+WASM is very useful when it comes to plugins, you can use Libraries made in Rust/C/C++ and compile it to WASM and then use it in Armory and Kha. Two examples that are used in ArmorPaint: <a href="https://twitter.com/luboslenco/status/1173942414966439938">Texture-synthesis(Rust)</a>, <a href="https://twitter.com/luboslenco/status/1172536139573538816">Chips(C)</a>.</p>
 </li>
 </ol>
 <hr />
-<p>Let's get started, fire up armory3D project.
-We will create Trait in following order:</p>
-<ol>
-<li><a href="Basics/Trait.html#haxe">Haxe</a></li>
-<li><a href="Basics/Trait.html#logic-node">Logic Node</a></li>
-<li><a href="Basics/Trait.html#wasm">Wasm</a></li>
-<li><a href="Basics/Trait.html#canvas">Canvas</a></li>
-</ol>
-<h3><a class="header" href="#haxe-1" id="haxe-1">Haxe</a></h3>
+<h2><a class="header" href="#haxe-1" id="haxe-1">Haxe</a></h2>
 <p>Create a cube, name it <code>Haxe</code> and place it wherever you want. Select it and go to <code>Scene - Armory Scene Trait</code>.</p>
 <ol>
-<li>Click <code>+</code>, select <code>Haxe</code> and click <code>OK</code>, <code>Haxe</code> trait placeholder should appear.</li>
-<li>Click <code>New Script</code> and name the script of your choice, just make sure the first letter is capital(<code>HaxeScript</code> for me).</li>
-<li>Finally hit <code>Edit Script</code>, you system default IDE should now open up with the project.</li>
+<li>Click <code>+</code>, select Haxe and click <code>OK</code>, Haxe trait placeholder should appear.</li>
+<li>Click <code>New Script</code> and name the script of your choice, just make sure the first letter is capital (<code>HaxeScript</code> for me).</li>
+<li>Finally hit <code>Edit Script</code>, your system default IDE should now open up with the project.</li>
 </ol>
-<p>Edit the script:</p>
 <pre><code class="language-haxe">// In HaxeScript.hx
 package arm;
 
@@ -549,18 +536,18 @@ import iron.math.Vec4;
 import iron.Scene;
 
 class HaxeScript extends iron.Trait {
-    //Initialise haxeCube as Object
+    // Initialise haxeCube as Object
     var haxeCube:Object;
 
     public function new() {
         super();
-        //NotifyOnInit function get excuted when the 'trait' is initiated.
+        //NotifyOnInit function get executed when the 'trait' is initiated.
         notifyOnInit(function() {
             //Get haxeCube Object from active Scene.
             haxeCube = Scene.active.getChild(&quot;Haxe&quot;);
         });
 
-        //NotifyOnUpdate function get excuted every frame.
+        //NotifyOnUpdate function get executed every frame.
         notifyOnUpdate(function() {
             //Rotate haxeCube with Vec4(x, y, z) and speed.
             haxeCube.transform.rotate(new Vec4(0.0, 0.0, 1.0), 0.01);
@@ -568,29 +555,31 @@ class HaxeScript extends iron.Trait {
     }
 }
 </code></pre>
-<p>Now, if you were to play it, you should see <code>Haxe</code> cube rotating!.</p>
-<h3><a class="header" href="#logic-node" id="logic-node">Logic Node</a></h3>
+<p>Now, if you were to play it, you should see Haxe cube rotating!.</p>
+<hr />
+<h2><a class="header" href="#logic-node" id="logic-node">Logic Node</a></h2>
 <p>Create a cube, name it <code>Nodes</code> and place it wherever you want. Select it and go to <code>Scene - Armory Scene Trait</code>.</p>
 <ol>
-<li>Click <code>+</code>, select <code>Nodes</code> and click <code>OK</code>, <code>Nodes</code> trait placeholder should appear.</li>
+<li>Click <code>+</code>, select Nodes and click <code>OK</code>, Nodes trait placeholder should appear.</li>
 <li>Change your editor type to <code>Logic Node Editor</code> and click <code>+New</code>.</li>
-<li>A node tree should be created, you can rename it by editing the text field(<code>LogicNodes</code> for me).</li>
-<li>Go back to <code>Scene - Armory Scene trait</code>, select you logic nodes place holder and click <code>Tree</code>, select <code>LogicNodes</code> in dropdown.</li>
+<li>A node tree should be created, you can rename it by editing the text field (<code>LogicNodes</code> for me).</li>
+<li>Go back to <code>Scene - Armory Scene trait</code>, select the logic nodes place holder and click <code>Tree</code>, select <code>LogicNodes</code> in dropdown.</li>
 </ol>
-<p>and now add following nodes(<code>Shift + A</code>):</p>
+<p>and now add following nodes (<code>Shift + A</code>):</p>
 <p><img src="Basics/../traits_1.png" alt="Some Image" /></p>
 <ol>
 <li>On Update: It is triggered every tick.</li>
 <li>Rotate object on axis, speed is set directly in vector.</li>
 </ol>
-<p>Now if you play it, <code>Nodes</code> cube should start spinnig.</p>
-<h3><a class="header" href="#wasm" id="wasm">Wasm</a></h3>
+<p>Now if you play it, Nodes cube should start spinning.</p>
+<hr />
+<h2><a class="header" href="#wasm" id="wasm">Wasm</a></h2>
 <p>Create a cube, name it <code>Wasm</code> and place it wherever you want. Select it and go to <code>Scene - Armory Scene Trait</code>.</p>
 <ol>
-<li>Click <code>+</code>, select <code>Wasm</code> and click <code>OK</code>, <code>Wasm</code> trait placeholder should appear.</li>
-<li>Click <code>New Module</code>, and it should re-direct you to <a href="https://webassembly.studio/">WebAssembly Studio</a>, select <code>Empty Rust Project</code>(you can select c/c++ too) and click <code>Create</code>.</li>
+<li>Click <code>+</code>, select <code>Wasm</code> and click <code>OK</code>, Wasm trait placeholder should appear.</li>
+<li>Click <code>New Module</code>, and it should re-direct you to <a href="https://webassembly.studio/">WebAssembly Studio</a>, select <code>Empty Rust Project</code> (you can select c/c++ too) and click <code>Create</code>.</li>
 <li>Enter <code>Rust</code>/<code>C</code>/<code>C++</code> code and click <code>Build</code> and there should be <code>main.wasm</code> in <code>out</code> folder, right-click and download it.</li>
-<li>Put outputed <code>main.wasm</code> in <code>Bundled</code> folder (create one, if there is no bundled folder).</li>
+<li>Put outputted <code>main.wasm</code> in <code>Bundled</code> folder (create one, if there is none).</li>
 <li>Go back to <code>Scene - Armory Scene Trait</code>, select previously created <code>Wasm</code> placeholder, click <code>Refresh</code> and select <code>main</code> in <code>Module</code> dropdown.</li>
 </ol>
 <pre><code class="language-rs">// Rust example of rotating cube
@@ -621,7 +610,8 @@ pub extern &quot;C&quot; fn main() -&gt; i32 {
 }
 </code></pre>
 <p>Now if you play it then you should have spinny rusty wasm cube.</p>
-<h3><a class="header" href="#canvas" id="canvas">Canvas</a></h3>
+<hr />
+<h2><a class="header" href="#canvas" id="canvas">Canvas</a></h2>
 <ol>
 <li>Click <code>+</code>, select <code>UI</code> and click <code>OK</code>, <code>Canvas</code> trait placeholder should appear.</li>
 <li>Click <code>New Canvas</code> and enter the name and click <code>Edit Canvas</code>.</li>
@@ -629,9 +619,11 @@ pub extern &quot;C&quot; fn main() -&gt; i32 {
 </ol>
 <p>If you play it now, you should see <code>Hello World from Canvas</code>.</p>
 <p>Check <a href="Basics/docs/Basics/Canvas.html">Canvas tutorial</a> for more!</p>
-<p><strong>🎉There we go! We covered the basics of Traits!🎉</strong></p>
+<p>You should finally get this:</p>
+<iframe width="560" height="400" src="https://blackgoku36.github.io/BG36-tutorials/Armory/src/trait_final.mp4" frameborder="0" allowfullscreen></iframe>
+<p><strong>🎉 There we go! We covered the basics of Traits! 🎉</strong></p>
 <hr />
-<p>If anything goes wrong, then you can check the <a href="https://github.com/BlackGoku36/armory-tutorial-sourcecode/tree/master/Traits">source code</a></p>
+<p>If anything goes wrong, don't forget to check <a href="https://github.com/BlackGoku36/armory-tutorial-sourcecode/tree/master/Traits">source code</a></p>
 <h1><a class="header" href="#getting-started-2" id="getting-started-2">Getting Started</a></h1>
 <h1><a class="header" href="#introduction-1" id="introduction-1">Introduction</a></h1>
 <p>Save/load is one of the most important feature in game, whether it is single-player or multi-player game. In case of single-player, the game data can be saved to local drive, with encryption so that cheating is not made easy. On other hand, in multi-players game, game data is saved on the server hosted by the game development group.</p>
