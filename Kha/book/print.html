@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="a.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="GettingStarted/Introduction.html"><strong aria-hidden="true">1.1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="GettingStarted/Setup.html"><strong aria-hidden="true">1.2.</strong> Setup</a></li></ol></li><li class="chapter-item expanded "><a href="HowToRead.html">How-to read</a></li><li class="chapter-item expanded affix "><a href="FAQ.html">FAQ</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="a.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="GettingStarted/Introduction.html"><strong aria-hidden="true">1.1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="GettingStarted/Setup.html"><strong aria-hidden="true">1.2.</strong> Setup</a></li></ol></li><li class="chapter-item expanded "><a href="a.html"><strong aria-hidden="true">2.</strong> Marching Cubes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="MarchingCubes/Introduction.html"><strong aria-hidden="true">2.1.</strong> Introduction</a></li></ol></li><li class="chapter-item expanded "><a href="HowToRead.html">How-to read</a></li><li class="chapter-item expanded affix "><a href="FAQ.html">FAQ</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -313,6 +313,36 @@
     &quot;problemMatcher&quot;: []
 }
 </code></pre>
+<h1><a class="header" href="#getting-started-1" id="getting-started-1">Getting Started</a></h1>
+<h1><a class="header" href="#introduction-1" id="introduction-1">Introduction</a></h1>
+<p>Let say you have <a href="https://en.wikipedia.org/wiki/Voxel">uniform grid of cubes</a>. 8 corners of each cubes has a value (density). Based upon this density, the corner is said to be inside/outside. Now, there are <code>2^8 = 256</code> possible amount of configuration of each of this cubes (only 14 of them are unique cases, rest of them are symmetries). And from this configuration, triangle(s) is made almost entirely from triangulation lookup tables, and placed relative to corresponding cube position.</p>
+<p><img src="MarchingCubes/../MCConfiguration.png" alt="" />
+<em>Image from Sebastian Lague's Coding Adventure: Marching Cubes</em></p>
+<p>This is performed on each of cubes while iterating (i.e., marching) over the grid, resulting in mesh made up of triangles. This algorithm is called <code>Marching cubes</code>.</p>
+<p>Example:</p>
+<blockquote class="twitter-tweet"><p lang="in" dir="ltr">Basics perlin terrain generation<a href="https://twitter.com/hashtag/haxe?src=hash&amp;ref_src=twsrc%5Etfw">#haxe</a> <a href="https://twitter.com/hashtag/yeswekha?src=hash&amp;ref_src=twsrc%5Etfw">#yeswekha</a> <a href="https://t.co/fO3JCygAxk">pic.twitter.com/fO3JCygAxk</a></p>&mdash; Blackgoku36 (@UrjasviS) <a href="https://twitter.com/UrjasviS/status/1259098316136222725?ref_src=twsrc%5Etfw">May 9, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p><em>Perlin terrain in marching cubes</em></p>
+<hr />
+<p>Lot of other iso-surface extraction method exists such as:</p>
+<ul>
+<li>Extended Marching Cubes</li>
+<li>Dual Marching Cubes</li>
+<li>Cubical Marching Squares</li>
+<li>Marching Tetrahedra</li>
+<li>Surface Nets</li>
+<li>Dual-Contouring</li>
+</ul>
+<p>Different iso-surface extraction algorithm have different up and downs. Two big downs of marching cubes is that it doesn't support sharp features and doing <a href="https://en.wikipedia.org/wiki/Level_of_detail">LOD</a> is quite difficult. But its big up is that it is easiest and simplest among other methods.</p>
+<p>Marching cubes was originally made to visualize data from CT and MRI devices and are still used for it nowadays. Marching cubes are also used in games (such as Astroneer, 7 Days to Die) for procedural and editable terrains.</p>
+<hr />
+<p>Resources:</p>
+<ul>
+<li><a href="http://paulbourke.net/geometry/polygonise/">Polygonising a scalar field (paper)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Marching_cubes">Wikipedia</a></li>
+<li><a href="https://developer.nvidia.com/gpugems/gpugems3/part-i-geometry/chapter-1-generating-complex-procedural-terrains-using-gpu">Nvidia's generating-complex-procedural-terrains-using-gpu</a></li>
+<li><a href="https://www.youtube.com/watch?v=M3iI2l0ltbE">Sebastian Lague's Coding Adventure: Marching Cubes</a></li>
+<li><a href="https://www.youtube.com/watch?v=dTdn3CC64sc">b3agz's How to Make 7 Days to Die in Unity series</a></li>
+</ul>
 <h1><a class="header" href="#how-to-read" id="how-to-read">How-to read</a></h1>
 <p>This is text that you have to read in order to understand what is going on.</p>
 <p>Boring right? I know.</p>
