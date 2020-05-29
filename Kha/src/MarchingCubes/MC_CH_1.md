@@ -599,3 +599,7 @@ class App {
 And we are done! If you play, you will see triangle generated. On pressing `Up` button, triangle from different cube's configuration will be generated!
 
 <iframe width="560" height="400" src="https://blackgoku36.github.io/BG36-tutorials/Kha/src/mc1.mp4" frameborder="0" allowfullscreen></iframe>
+
+---
+
+[Source code](https://github.com/BlackGoku36/KhaMCTut/commit/2308a5c573869ce2b6d8169d4fc54a92421b0f52) for this chapter.
