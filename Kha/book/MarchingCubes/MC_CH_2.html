@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Setup - BG-36's Tutorials | Kha</title>
+        <title>Chapter-2 - BG-36's Tutorials | Kha</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../a.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../GettingStarted/Introduction.html"><strong aria-hidden="true">1.1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../GettingStarted/Setup.html" class="active"><strong aria-hidden="true">1.2.</strong> Setup</a></li></ol></li><li class="chapter-item expanded "><a href="../a.html"><strong aria-hidden="true">2.</strong> Marching Cubes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MarchingCubes/Introduction.html"><strong aria-hidden="true">2.1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../MarchingCubes/MC_CH_1.html"><strong aria-hidden="true">2.2.</strong> Chapter-1</a></li><li class="chapter-item expanded "><a href="../MarchingCubes/MC_CH_2.html"><strong aria-hidden="true">2.3.</strong> Chapter-2</a></li></ol></li><li class="chapter-item expanded "><a href="../HowToRead.html">How-to read</a></li><li class="chapter-item expanded affix "><a href="../FAQ.html">FAQ</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../a.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../GettingStarted/Introduction.html"><strong aria-hidden="true">1.1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../GettingStarted/Setup.html"><strong aria-hidden="true">1.2.</strong> Setup</a></li></ol></li><li class="chapter-item expanded "><a href="../a.html"><strong aria-hidden="true">2.</strong> Marching Cubes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MarchingCubes/Introduction.html"><strong aria-hidden="true">2.1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../MarchingCubes/MC_CH_1.html"><strong aria-hidden="true">2.2.</strong> Chapter-1</a></li><li class="chapter-item expanded "><a href="../MarchingCubes/MC_CH_2.html" class="active"><strong aria-hidden="true">2.3.</strong> Chapter-2</a></li></ol></li><li class="chapter-item expanded "><a href="../HowToRead.html">How-to read</a></li><li class="chapter-item expanded affix "><a href="../FAQ.html">FAQ</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -152,102 +152,235 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#setup" id="setup">Setup</a></h1>
-<p>Setting up kha is relatively easy. Kha comes with its own haxe version, so no need to worry about installing haxe. Kha have different workflow, i.e., Kode Studio, Git and Haxelib. You can find about them <a href="https://github.com/Kode/Kha/wiki/Getting-Started">here</a>. We are going to VSCode + Git workflow, that almost everyone uses.</p>
-<ol>
-<li>Download and install:
-<ul>
-<li><a href="https://git-scm.com/">git</a>.</li>
-<li><a href="https://nodejs.org/en/">nodejs</a>. (To use kha from command line)</li>
-<li><a href="https://code.visualstudio.com/">VSCode</a>.</li>
-</ul>
-</li>
-<li>Git clone kha recursively, wherever you want.</li>
-</ol>
-<pre><code>git clone --recursive https://github.com/Kode/Kha.git
-</code></pre>
-<ol start="3">
-<li>In <code>VSCode - extension</code>, install <a href="https://marketplace.visualstudio.com/items?itemName=kodetech.kha-extension-pack">Kha extension pack</a> and <a href="https://marketplace.visualstudio.com/items?itemName=vshaxe.haxe-extension-pack">Haxe extension pack</a>.</li>
-<li>Go to setting, and navigate to <code>Extensions - Kha - Kha Path</code> and enter your <code>path/to/Kha</code> that you just cloned.</li>
-<li>Open an empty folder and press <code>F1</code> (<code>fn</code>+<code>F1</code> on macOS) and enter <code>Kha: Init Project</code>. New starter Kha project should be created.</li>
-<li>Go to <code>Run</code> panel, select <code>Kha: HTML5</code> from dropdown and press triangle next to it to start debugging.</li>
-</ol>
-<p>You should get something like this:</p>
-<p><img src="../kha_1.png" alt="Some Image" /></p>
-<hr />
-<h3><a class="header" href="#extra-eliminating-cache-building-issues" id="extra-eliminating-cache-building-issues">Extra: Eliminating cache building issues</a></h3>
-<p>Kha cache code to improve build times. But sometime Kha doesn't detect changes made in code (this usually happen with small code changes such as typo fixes, variable changes, etc) and uses cached code and so the changes made doesn't appear. This can make programmer scratch their heads or even possible make them throw their laptop/pc out of window. You will have to delete build folder every time before running to avoid this issue. This can be solved with VSCode's tasks.</p>
-<ol>
-<li>Press <code>F1</code> (<code>fn</code> + <code>F1</code> on macOS) and enter <code>Tasks: Configure Task</code> and select <code>Kha: Build for Debug HTML5</code>.</li>
-<li>Paste:</li>
-</ol>
-<pre><code class="language-json">{
-    &quot;version&quot;: &quot;2.0.0&quot;,
-    &quot;tasks&quot;: [
-        {
-            &quot;label&quot;: &quot;Clean Build&quot;,
-            &quot;type&quot;: &quot;shell&quot;,
-            // &quot;command&quot;: &quot;rm -r \&quot;${workspaceRoot}/build\&quot;&quot;
-            // Uncomment above line if you are on unix (Linux/macOS)
-            // &quot;command&quot;: &quot;rmdir /Q /S \&quot;${workspaceRoot}/build\&quot;&quot;
-            // Uncomment above line if you are on windows
-        },
-        {
-            &quot;type&quot;: &quot;Kha&quot;,
-            &quot;target&quot;: &quot;Debug HTML5&quot;,
-            &quot;problemMatcher&quot;: [
-                &quot;$haxe-absolute&quot;,
-                &quot;$haxe&quot;
-            ],
-            &quot;dependsOn&quot;: [
-                &quot;Clean Build&quot;
-            ],
-            &quot;group&quot;: {
-                &quot;kind&quot;: &quot;build&quot;,
-                &quot;isDefault&quot;: true
+                        <h1><a class="header" href="#chapter-2" id="chapter-2">Chapter-2</a></h1>
+<p>In chapter-1 we got marching cubes working and we were able to check its different configurations.</p>
+<p>We will create 32x32 volume (basically our terrain chunk), and apply marching cubes to it.</p>
+<p>Create new Haxe script <code>Volume.hx</code></p>
+<pre><code class="language-haxe">package;
+
+import kha.arrays.Float32Array;
+
+class Volume {
+
+    // Width of volume
+    public static var width = 32;
+    // Height of volume
+    public static var height = 32;
+    // Offset of noise
+    public static var offset = 1.5;
+
+    public static function makeTerrainVolume(done:(Float32Array)-&gt;Void) {
+
+        // Float32Array of size of volume
+        var volume = new Float32Array(width * height * width);
+        // Init perlin noise
+        var perlin = new Perlin();
+
+        // Iterate through volume
+        for (x in 0...width){
+            for(z in 0...width){
+                for (y in 0...height){
+                    // Create density from perlin noise, this is terribly basic terrain generation code.
+                    //      height of terrain * perlin noise that is useable.
+                    var density = 10 * perlin.perlin(x/ 16 + offset, y/ 16 + offset, z/ 16 + offset);
+                    // Location of cube
+                    var l = (x) + (y * width) + (z * height * width);
+                    // Set density in volume
+                    volume[l] = y-density;
+                }
             }
         }
-    ]
+        done(volume);
+    }
 }
 </code></pre>
-<p>It just delete your <code>build</code> folder before the build process start.</p>
+<p>Perlin noise code is taken from <a href="https://github.com/whuop/hxNoise/blob/master/hxnoise/Perlin.hx">here</a>.</p>
+<p>With that our volume generation is done. Now we will march over the volume and apply the algorithm to it.</p>
+<pre><code class="language-haxe">package;
+
+import kha.FastFloat;
+import kha.arrays.Float32Array;
+import kha.math.FastVector3;
+
+class MarchingCubes {
+
+    var idxV = 0;
+    var idxI = 0;
+    // Surface density
+    var surface = 0.5;
+    // Density of cube's corner.
+    var cube:Array&lt;FastFloat&gt; = [0,0,0,0,0,0,0,0];
+    // Volume
+    public static var vol:Float32Array;
+
+    public function new() {
+        // Create terrain volume
+        Volume.makeTerrainVolume((volume)-&gt;{
+            vol = volume;
+        });
+        generate();
+    }
+
+    public function clean() {...}
+
+    public function generate() {
+        // Iterate over the volume
+        for(x in 0...Volume.width-1){
+            for(y in 0...Volume.height-1){
+                for (z in 0...Volume.width-1){
+                    for (i in 0...8){
+                        // Sample density for cube
+                        cube[i] = getDensityFromVolume(
+                            x + MCData.cornerTable[i].x,
+                            y + MCData.cornerTable[i].y,
+                            z + MCData.cornerTable[i].z
+                        );
+                    }
+                    // Apply algorithm on cube
+                    polygonize(new FastVector3(x,y,z), cube);
+                }
+            }
+        }
+        calculateVertexNormal();
+    }
+
+    function polygonize(position:FastVector3, cube:Array&lt;FastFloat&gt;) {
+
+        // Get configuration index based on cube's density
+        var configIndex = getConfigIndex(cube);
+
+        // Return if it is above or below the surface.
+        if(configIndex == 0 || configIndex == 255) return;
+
+        var edgeIndex = 0;
+
+        for (i in 0...15){...}
+    }
+
+    inline function getConfigIndex(cube:Array&lt;FastFloat&gt;) {
+        var configIndex = 0;
+        // If the density is above surface than do bitwise operation to determine the configuration index.
+        // If you were to try https://try.haxe.org/#7390D, you will see that it will give us all configuration index possible.
+        if(cube[0] &gt; surface) configIndex |= 1;
+        if(cube[1] &gt; surface) configIndex |= 2;
+        if(cube[2] &gt; surface) configIndex |= 4;
+        if(cube[3] &gt; surface) configIndex |= 8;
+        if(cube[4] &gt; surface) configIndex |= 16;
+        if(cube[5] &gt; surface) configIndex |= 32;
+        if(cube[6] &gt; surface) configIndex |= 64;
+        if(cube[7] &gt; surface) configIndex |= 128;
+
+        return configIndex;
+    }
+
+    inline public function getDensityFromVolume(x:Float, y:Float, z:Float) {
+        // Get density from volume at position
+        return vol[Std.int(x) + Std.int(y) * Volume.width + Std.int(z) * Volume.width * Volume.height];
+    }
+
+    public static function calculateVertexNormal() {...}
+}
+</code></pre>
+<p>We will have to update our vertex buffer to hold more pipeline.</p>
+<pre><code class="language-haxe">// Mesh.hx
+// In load()
+vertexBuffer = new VertexBuffer(Std.int(vertices.length / 3)*2, structure, Usage.StaticUsage);
+</code></pre>
+<p>To offset terrain on run.</p>
+<pre><code class="language-haxe">// App.hx
+// In update()
+if(kb.started(Up)){
+    Volume.offset += 1;
+    Volume.makeTerrainVolume((vol)-&gt;{
+        MarchingCubes.vol = vol;
+    });
+    mc.clean();
+    mc.generate();
+    App.mesh.remesh();
+}
+</code></pre>
+<p>And you should have blocky terrain which you can change with keyboard.</p>
+<iframe width="560" height="400" src="https://blackgoku36.github.io/BG36-tutorials/Kha/src/mc2.mp4" frameborder="0" allowfullscreen></iframe>
+<p>Unlike me, if you are not fan of blocky terrain, you can sample it vertices position and lerp it.</p>
+<pre><code class="language-haxe">package;
+
+import kha.FastFloat;
+import kha.arrays.Float32Array;
+import kha.math.FastVector3;
+
+class MarchingCubes {
+
+    var idxV = 0;
+    ~
+    public static var vol:Float32Array;
+
+    var smooth = true;
+
+    public function new() {...}
+    public function clean() {...}
+    public function generate() {...}
+
+    function polygonize(position:FastVector3, cube:Array&lt;FastFloat&gt;) {
+
+        ~
+
+        for (i in 0...15){
+            var indice = MCData.triangleTable[configIndex][edgeIndex];
+            if(indice == -1) return;
+
+            var vert1 = position.add(MCData.cornerTable[MCData.edgeIndexes[indice][0]]);
+            var vert2 = position.add(MCData.cornerTable[MCData.edgeIndexes[indice][1]]);
+
+            var vertPosition = new FastVector3();
+
+            if(smooth){
+                // Get density of edge index.
+                var vert1Sample = cube[MCData.edgeIndexes[indice][0]];
+                var vert2Sample = cube[MCData.edgeIndexes[indice][1]];
+
+                // Get difference of it
+                var difference = vert2Sample - vert1Sample;
+
+                // If difference is zero, set surface as difference.
+                if (difference == 0) difference = surface;
+                else difference = (surface - vert1Sample) / difference;
+                // Else lerp it.
+
+                vertPosition = vert1.add(vert2.sub(vert1).mult(difference));
+
+            }else {
+                vertPosition = vert1.add(vert2).mult(0.5);
+            }
+
+            App.mesh.vertices[idxV] = vertPosition.x;
+            ~
+            edgeIndex++;
+        }
+    }
+
+    inline function getConfigIndex(cube:Array&lt;FastFloat&gt;) {...}
+    inline public function getDensityFromVolume(x:Float, y:Float, z:Float) {...}
+    public static function calculateVertexNormal() {...}
+}
+
+</code></pre>
+<p>You should finally get dunes that you probably wants.</p>
+<iframe width="560" height="400" src="https://blackgoku36.github.io/BG36-tutorials/Kha/src/mc3.mp4" frameborder="0" allowfullscreen></iframe>
 <hr />
-<h3><a class="header" href="#extra-removing-that-allow-incoming-connection-blah-blah-blah-on-macos-every-time-you-use-krom" id="extra-removing-that-allow-incoming-connection-blah-blah-blah-on-macos-every-time-you-use-krom">Extra: Removing that <code>Allow incoming connection blah blah blah</code> on macOS, every time you use Krom.</a></h3>
-<p>To get around this <a href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.kym-cdn.com%2Fphotos%2Fimages%2Fnewsfeed%2F000%2F968%2F291%2F682.gif&amp;f=1&amp;nofb=1">annoying thing</a>, VSCode's tasks comes to rescue once again.</p>
-<ol>
-<li>Open <code>task.json</code></li>
-<li>Add below object to <code>tasks</code> array:</li>
-</ol>
-<pre><code class="language-json">{
-    &quot;label&quot;: &quot;Build Krom&quot;,
-    &quot;type&quot;: &quot;shell&quot;,
-    &quot;command&quot;: &quot;node path/to/Kha/make krom&quot;
-},
-{
-    &quot;label&quot;: &quot;Krom&quot;,
-    &quot;type&quot;: &quot;shell&quot;,
-    &quot;command&quot;: &quot;path/to/Krom.app/Contents/MacOS/Krom ${workspaceRoot}/build/krom ${workspaceRoot}/build/krom-resources&quot;,
-    &quot;dependsOn&quot;: [
-        &quot;Clean Build&quot;,
-        &quot;Build Krom&quot;
-    ],
-    &quot;dependsOrder&quot;: &quot;sequence&quot;,
-    &quot;problemMatcher&quot;: []
-}
-</code></pre>
+<p><a href="https://github.com/BlackGoku36/KhaMCTut/commit/d4c556624d7d38c5e4629560ce918d3d5126b693">Source code</a> for this chapter.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../GettingStarted/Introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../MarchingCubes/MC_CH_1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../a.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../HowToRead.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -259,13 +392,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../GettingStarted/Introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../MarchingCubes/MC_CH_1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="../a.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../HowToRead.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
